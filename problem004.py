@@ -3,8 +3,7 @@ from csv import reader
 
 def minimumOfTwo():
     """
-    This function calculates minimum sum of two a list given with
-    three values of a nested list.
+    This function give smallest number between two numbers given in a list.
     :return:
     """
     arq = open("problem004.csv")
