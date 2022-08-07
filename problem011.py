@@ -22,9 +22,9 @@ def stringsToInteger():
 
 def operationsIfTheData(l3):
     """
-    This function has as return the operations with the three number given
-    by the "l3" list, wich the first is multipled by second and the result
-    of mutiplicantion is add to third number into list.
+    This function has as retunr the operations with the three number given
+    by the "l3" list, wich the first is multipled by second and the result of
+    mutiplicantion is add to third number into list.
     :param l3:
     :return:
     """
