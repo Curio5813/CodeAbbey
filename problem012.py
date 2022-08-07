@@ -1,11 +1,10 @@
 from csv import reader
-from datetime import timedelta
 
 
 def stringToInteger():
     """
-    This function convert string to integer variable, and return
-    a list that which is a timestamps.
+    This function open a .csv files ans convert string to integer variable,
+    and return a list that which is a timestamps.
     :return:
     """
     arq = open("problem012.csv")
@@ -17,11 +16,10 @@ def stringToInteger():
     return l1
 
 
-def moduloAndDifference(l1):
+def transformAllToSeconds(l1):
     """
     This function take the parameter given by the function above
-    and return a list with the differnce beteewn the timestamps
-    give above in a list.
+    and return with another list all values in seconds.
     :param l1:
     :return:
     """
@@ -40,7 +38,23 @@ def moduloAndDifference(l1):
             t2 = d2 + h2 + m2 + s2
             diff = t2 - t1
         l2.append(diff)
-    print(l2)
+    return l2
 
 
-moduloAndDifference(stringToInteger())
+def moduloAndTimeDifference(l2):
+    """
+    This function return a list with the time difference
+    :return:
+    """
+    for i in range(0, len(l2)):
+        day = l2[i] // (24 * 60 * 60)
+        l2[i] = l2[i] - (day * 24 * 60 * 60)
+        hrs = l2[i] // (60 * 60)
+        l2[i] = l2[i] - (hrs * 60 * 60)
+        minut = l2[i] // 60
+        l2[i] = l2[i] - (minut * 60)
+        second = l2[i]
+        print(f"({day} {hrs} {minut} {second})", end=" ")
+
+
+moduloAndTimeDifference(transformAllToSeconds(stringToInteger()))
