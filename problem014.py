@@ -10,7 +10,7 @@ def stringToSignal():
     arq = open("problem014.csv")
     l1 = reader(arq, delimiter=" ")
     l1 = list(l1)
-    l2 = ["="]
+    l2 = ["="]  # I put the list not empty to avoid list index error
     for i in range(0, len(l1)):
         for k in range(0, len(l1[i])):
             if i > 0:
@@ -28,7 +28,7 @@ def stringToInterger():
     arq = open("problem014.csv")
     l1 = reader(arq, delimiter=" ")
     l1 = list(l1)
-    l2, l3 = ["="], []
+    l3 = []
     for i in range(0, len(l1)):
         for k in range(0, len(l1[i])):
             if i == 0:
