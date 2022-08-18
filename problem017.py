@@ -7,7 +7,7 @@ def stringToInteger():
     with them.
     :return:
     """
-    arq = open("problem017.csv")
+    arq = open("problem023.csv")
     l1 = reader(arq, delimiter=" ")
     l1 = list(l1)
     l2 = []
@@ -29,6 +29,7 @@ def arrayChecksum(l2):
     :param l2:
     :return:
     """
+    print(l2)
     soma = 0
     for i in range(0, len(l2)):
         soma += l2[i]

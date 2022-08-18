@@ -18,6 +18,7 @@ def justBrackets():
             l3.append(l2)
             l2 = ""
     print(l3)
+    print(len(l3))
     return l3
 
 
