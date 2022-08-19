@@ -1,5 +1,4 @@
 from csv import reader
-from time import time
 
 
 def stringToInteger():
@@ -7,7 +6,7 @@ def stringToInteger():
     This function take a list of strings and return a list o integer.
     :return:
     """
-    arq = open("test.csv")
+    arq = open("problem022.csv")
     l1 = reader(arq, delimiter=" ")
     l1 = list(l1)
     l2, l3 = [], []
@@ -17,6 +16,7 @@ def stringToInteger():
             l2.append(num)
         l3.append(l2)
         l2 = []
+    print(l3)
     return l3
 
 
@@ -28,22 +28,16 @@ def twoPrinters(l3):
     :param l3: 
     :return: 
     """
-    cont1, cont2, pg, l4 = 0, 0, 0, []
+    cont, pg, l4 = 0, 0, []
     for i in range(0, len(l3)):
-        while pg <= l3[i][2]:
-            cont1 += l3[i][0]
-            if cont1 % l3[i][0] == 0:
+        while pg < l3[i][2]:
+            cont += 1
+            if cont % l3[i][0] == 0:
                 pg += 1
-                if pg == l3[i][2]:
-                    l4.append(cont1)
-                    break
-            cont2 += l3[i][1]
-            if cont2 % l3[i][1] == 0:
+            if cont % l3[i][1] == 0:
                 pg += 1
-                if pg == l3[i][2]:
-                    l4.append(cont2)
-                    break
-        cont1, cont2, pg = 0, 0, 0
+        l4.append(cont)
+        cont, pg = 0, 0
     return print(*l4)
 
 
