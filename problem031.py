@@ -1,54 +1,46 @@
-"""
-=============
-Rotate String
-=============
+from csv import reader
 
-To rotate string by K characters means to cut these characters from the beginning and transfer them to
-the end. If K is negative, characters, on contrary should be transferred from the end to the beginning.
 
-Input data will contain the number of test-cases in the first line.
-Following lines will contain number K and some string S separated by space - one pair in each line.
-String S will contain only lowercase latin letters. K will not exceed half the length of S by absolute
-value.
-Answer should contain strings rotated in accordance with the rule above, separated by spaces.
-For example:
+def openCSVFile():
+    """
+    This function open a .csv file and put into a list with strings
+    and numbera.
+    :return:
+    """
+    arq = open("problem031.csv")
+    l1 = reader(arq, delimiter=" ")
+    l1 = list(l1)
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            l1[i][0] = int(l1[i][0])
+    return l1
 
-input data:
-2
-3 forwhomthebelltolls
--6 verycomplexnumber
 
-answer:
-whomthebelltollsfor numberverycomplex
+def rotateString(l1):
+    """
+    This function take a list of strings and numbers
+    and rotate these strings in a specific way determined
+    by their index.
+    :param l1:
+    :return:
+    """
+    l2 = []
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            idx = l1[i][0]
+            a = len(l1[i][1])
+            if l1[i][1] and idx > 0:
+                st1 = l1[i][1][0:idx]
+                st2 = l1[i][1][idx:] + st1
+                l2.append(st2)
+                break
+            elif l1[i][1] and idx < 0:
+                idx *= -1
+                st1 = l1[i][1][0:a - idx]
+                st2 = l1[i][1][a - idx:] + st1
+                l2.append(st2)
+                break
+    return print(*l2)
 
-The task could be easily solved by creating new instance of string concatenating two substrings.
-However, if you want more serious challenge, you are encouraged to perform rotation "in-place",
-moving bytes of original string (i.e. without allocating memory for new instance). This could be
-done with the help of a loop and only one temporary variable.
-"""
 
-v1 = [1, 'csgxplbunsiienxueafwtgrgm',
-      3, 'lihoqnfyygugyeewro',
-      1, 'qnkwiqcbolmmtaeaaezhza',
-      -1, 'wqabhxrubhsskuaw',
-      -4, 'olkuidebdeyioqjuxa',
-      -3, 'witasuxtcaonklv',
-      3, 'stwaphemieajgriasaojnr',
-      -5, 'thucwlukcpajtghybrisayfuh',
-      6, 'xyylhmoixcjarddfkleleoi']
-v2 = []
-for i in range(0, len(v1), 2):
-    if v1[i] > 0:
-        str1 = v1[i + 1]
-        str2 = v1[i + 1][:v1[i]]
-        str3 = v1[i + 1][v1[i]:] + str2
-        v2.append(str3)
-    if v1[i] < 0:
-        str1 = v1[i + 1]
-        str2 = v1[i + 1][v1[i]:]
-        str3 = str2 + v1[i + 1][:v1[i]]
-        v2.append(str3)
-for k in range(0, len(v2)):
-    print(v2[k], end=' ')
-print('')
-print('')
+rotateString(openCSVFile())
