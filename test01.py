@@ -1,9 +1,5 @@
-from math import lcm
-
-a = 3
-b = 5
-c = 4
-d = lcm(a, b)
-print(d)
-e = c - d
-print(e)
+a = [2, 5, 4, 1, 7]
+a.insert(1, 4)
+print(a)
+a.pop(2)
+print(a)

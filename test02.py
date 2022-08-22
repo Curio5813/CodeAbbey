@@ -6,7 +6,7 @@ def justBrackets():
     This function open a .csv file and return a list of strings.
     :return:
     """
-    arq = open("test.csv")
+    arq = open("test01.csv")
     l1 = reader(arq)
     l1 = list(l1)
     l2, l3 = "", []

@@ -7,10 +7,89 @@
     <list default="true" id="7b8b4b1e-4d2f-4228-a5ee-f5063941168f" name="Changes" comment="Updating and Refactoring files">
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem022.csv" beforeDir="false" afterPath="$PROJECT_DIR$/problem022.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem022.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem022.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pythagorean_triples.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arithmetic_progression.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/arithmetic_progression.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_checksum.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_checksum.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_counters.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/array_counters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/average_of_array.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/average_of_array.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/binary_search.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/blackjack_counting.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubble_in_array.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubble_in_array.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubble_sort.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bubble_sort.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards_shuffling01.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cards_shuffling02.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cloud_altitude_measurement.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/code_guesser.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_problem_22.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fahrenheit_to_celsius.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fahrenheit_to_celsius.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fibonacci_divisibility.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fool_day.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/funny_words_generator.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/greatest_common_divisor.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/greatest_common_divisor.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integer_factorization.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linear_congruential_generator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linear_congruential_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linear_function.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/linear_function.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/list_comprehension_p1.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/list_comprehension_p2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matching_brackets.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matching_brackets_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matching_words.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maximum_of_array.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/maximum_of_array.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimum_of_three.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimum_of_three.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimum_of_two.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/minimum_of_two.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modular_calculator.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modular_calculator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulo_and_time_difference.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/modulo_and_time_difference.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/neumanns_random_generator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/neumanns_random_generator.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prime_ranges.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem028.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem028.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem029.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem029.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem030.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem030.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem031.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rock_paper_scissors.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rounding.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rounding.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/selection_sort.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/share_price_volatile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/square_root.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/square_root.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sum_a_b.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sum_in_loop.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sum_in_loop.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sum_of_digits.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sum_of_digits.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sums_in_loop.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sums_in_loop.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tic_tac_toe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tree_height_measurement.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/triangles.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/triangles.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_printers.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_printers.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/two_printers_test.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vowel_count.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vowel_count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weighted_sum_of_digits.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/weigthed_sum_of_digits.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/words.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yacht_game.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,8 +129,8 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.problem027">
-    <configuration name="problem022" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.problem031">
+    <configuration name="problem029" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -63,7 +142,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem022.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem029.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -72,7 +151,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="problem025" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="problem030" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -84,7 +163,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem025.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem030.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -93,7 +172,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="problem026" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="problem031" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -105,28 +184,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem026.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="problem027" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CodeAbbey" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem027.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem031.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -156,13 +214,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test02" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CodeAbbey" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test02.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.problem027" />
-        <item itemvalue="Python.problem026" />
-        <item itemvalue="Python.problem025" />
-        <item itemvalue="Python.problem022" />
+        <item itemvalue="Python.problem031" />
+        <item itemvalue="Python.problem030" />
+        <item itemvalue="Python.problem029" />
         <item itemvalue="Python.test01" />
+        <item itemvalue="Python.test02" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +310,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660814659473</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updating and Refactoring files">
+      <created>1660909790892</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1660909790892</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

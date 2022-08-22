@@ -1,27 +1,11 @@
-"""
-==============
-Reverse String
-==============
+def reverseString():
+    """
+    This function take a string and return it reversed.
+    :return:
+    """
+    s = "clown moon stay cactus where turn bulb pick on"
+    s = s[::-1]
+    return print(s)
 
-Quite a simple task - just to start learning strings...
 
-Input data will contain a single string of small latin letters and few spaces.
-Answer should contain the string of the same length with the same characters but in reverse order.
-
-Example:
-
-input data:
-four score and seven years ago
-
-answer:
-oga sraey neves dna erocs ruof
-
-Though some languages especially functional has built-in function for this, please try perform it on your
-own and 'in-place' i.e. moving characters of the same string instead of copying them to the new one.
-"""
-
-print('')
-texto = 'interrogative about fare till stove pick why and where supper'
-print(texto[::-1], end='')
-print('')
-print('')
+reverseString()
