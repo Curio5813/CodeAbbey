@@ -50,6 +50,7 @@ def convertAsciiToBinary(l3):
             print(int(l3[i]))
             l3[i] %= 2
             rem = l3[i].append(l3[i])
+        print(rem)
         l3[i] = int(l3[i])
         l4.append(bin(l3[i]))
         print(l4[i])

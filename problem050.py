@@ -1,67 +1,41 @@
-"""
-===========
-Palindromes
-===========
+from csv import reader
 
-The word or whole phrase which has the same sequence of letters in both directions is called a palindrome.
-Here are few examples:
 
-Stats
-Amore, Roma
-No 'x' in Nixon
-Was it a cat I saw?
-As you see, case of the letters is ignored. Spaces and punctuations are ignored too.
+def stringsToListofStrings():
+    """
+    This function open a .csv file and return a list of strings.
+    In that list fo strings case of the letters is ignored.
+    Spaces and punctuations are ignored too.
+    :return:
+    """
+    arq = open("problem050.csv")
+    l1 = reader(arq, delimiter=" ")
+    l1 = list(l1)
+    str_l, l2, l3 = "", [], []
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):  # This loop remove everything that is not a letter
+            str_l += l1[i][k].replace(",", "").replace(".", "").\
+                replace("!", "").replace("?", "").replace("-", "").replace("'", "")
+        l2.append(str_l.lower())
+        str_l = ""
+    print(l2)
+    return l2
 
-Your goal in this programming exercise is to determine, whether the phrase represents a palindrome or not.
 
-Input data contains number of phrases in the first line.
-Next lines contain one phrase each.
-Answer should have a single letter (space separated) for each phrase: Y if it is a palindrome and N if not.
+def palindromes(l2):
+    """
+    This function takes the list l2, given by the function above
+    and print for each string if it is a palindrome 'Y', or not, 'N'.
+    :return:
+    """
+    l3 = []
+    for i in range(0, len(l2)):
+        if l2[i] == l2[i][::-1]:
+            l3.append("Y")
+        elif l2[i] != l2[i][::-1]:
+            l3.append("N")
+    print(len(l3))
+    return print(*l3)
 
-Example:
 
-input data:
-3
-Stars
-O, a kak Uwakov lil vo kawu kakao!
-Some men interpret nine memos
-
-answer:
-N Y Y
-"""
-
-print('')
-phrases = ['A, mi Iwpy-se, Nnes-Yp W Ii, ma',
-           'H-amegi, diio, igfi, Pu Riallkai, Akllairu-P, ifgioiidi ge, Mah',
-           'Fadpujef Iyn-ptdu-G yau h-Uaygudtpnyiejupdaf',
-           'Rwgbya U, Kzyoo ue-A Tyj uw C, iejjeicw u jytaeuooyzkuy Bgwr',
-           'Iykoaokelkhtzoii, xnyq Ynxi, io, Z thklecK o-A-oky i',
-           'D-gyeyheoili, oehye ygd',
-           'A-wbbye-E, Abeiiebaeeybb wa',
-           'Kdzq-mcosoou, pyrvfpuuhyisl-s-Iyhuu pfvry, puoosocm qzdk',
-           'Oz, Ia, yb-hioeldd leo, Ihy-Ya iz, o',
-           'F euuaz, pymayi Mwp h Pwmiy, amypzauuef',
-           'Akd Joj, Kirya, Zhhza-Yri-kjojdka',
-           'Y U Dxu mqy, Ugiig, unqmuxd u-Y',
-           'Odtafs-J Vcei, Aoz-moy yorzoaiecvjsf At, do',
-           'Feeb ulcrbcev, ea tggtaeve Cbrc-Luree, F',
-           'Jeeeeaopuchs-knuoyuyae ayuyounkshcupoaieeej',
-           'Sgogauosiu ag ogs',
-           'Rrh, aeizc C zieahrr']
-n = 0
-i = 0
-v = []
-while n < len(phrases):
-    phrases[i] = phrases[i].upper()
-    phrases[i] = phrases[i].replace(',', '')
-    phrases[i] = phrases[i].replace('-', '')
-    phrases[i] = phrases[i].replace(' ', '')
-    v.append(phrases[i])
-    i += 1
-    n += 1
-for i in range(0, len(v)):
-    if v[i] == v[i][::-1]:
-        print('Y', end=' ')
-    else:
-        print('N', end=' ')
-print('')
+palindromes(stringsToListofStrings())
