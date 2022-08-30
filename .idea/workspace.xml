@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b8b4b1e-4d2f-4228-a5ee-f5063941168f" name="Changes" comment="Updating and Refactoring files">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem032.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem032.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem033.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem033.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem035.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem048.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem048.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem050.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem050.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem067.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem069.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
-    </list>
+    <list default="true" id="7b8b4b1e-4d2f-4228-a5ee-f5063941168f" name="Changes" comment="Updating and Refactoring files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -256,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661187833515</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Updating and Refactoring files">
+      <created>1661870089091</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1661870089091</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
