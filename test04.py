@@ -1,2 +1,2 @@
-a = "hello world"
-print(a.index("l"))
+print(int(-0b1001111110))
+

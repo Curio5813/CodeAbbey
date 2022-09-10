@@ -164,6 +164,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/problem038.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/problem041.csv">
           <value>
             <Attribute>
@@ -172,6 +179,13 @@
           </value>
         </entry>
         <entry key="/problem043.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/problem044.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -199,6 +213,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/problem057.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/problem067.csv">
           <value>
             <Attribute>
@@ -206,7 +227,35 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/problem068.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/problem069.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/problem081.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/problem104.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/test01.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
