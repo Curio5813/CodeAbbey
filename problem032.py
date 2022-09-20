@@ -1,5 +1,4 @@
 from csv import reader
-from time import sleep
 
 
 def josephusProblem():
@@ -17,18 +16,20 @@ def josephusProblem():
     l1 = list(*l1)
     l1[0] = int(l1[0])
     l1[1] = int(l1[1])
-    n, k, l2 = l1[0], l1[1], []
+    n, a, l2 = l1[0], l1[1], []
     for i in range(1, n + 1):
         l2.append(i)
-    for j in range(n):
-        if len(l2) == 1:
-            break
-        for i in range(0, len(l2), k):
+    for i in range(n):
+        for k in range(0, len(l2)):
+            if len(l2) == 1:
+                break
+            if a > len(l2) - 1:
+                a -= len(l2)
+                break
+            else:
+                l2.pop(a - 1)
+                a += l1[1] - 1
             print(l2)
-            if k > len(l2) - 1:
-                k -= len(l2)
-            l2.pop(k - 1)
-            k += 2
     return print(*l2)
 
 

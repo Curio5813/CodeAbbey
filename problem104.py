@@ -1,69 +1,76 @@
-"""
-==============
-Triangle Area
-==============
-
-Being able to calculate area of triangle is quite important since many more complex tasks are often easily
-reduced to this (and we will use it too later).
-
-One of the oldest known methods is Heron's Formula which takes as inputs the lengths of the triangle's sides.
-
-In this problem you however is to write a program which uses X and Y coordinates of the triangle's vertices
-instead. So you can use either this formula somehow or find another one.
-
-Input data will contain the number of triangles to process.
-Next lines will contain 6 values each, in order X1 Y1 X2 Y2 X3 Y3, describing three vertices of a triangle.
-Answer should give areas of triangles separated by space (precision about 1e-7 is expected).
-
-Example:
-
-data:
-3
-1 3 9 5 6 0
-1 0 0 1 10000 10000
-7886 5954 9953 2425 6250 2108
-
-answer:
-17 9999.5 6861563
-"""
-print('')
-
+from csv import reader
 from math import sqrt
 
 
-def triangule_area():
-    areas = []
-    dados = [1546, 5989, 1086, 1349, 4306, 7806,
-             7675, 9612, 8361, 2441, 5256, 314,
-             7807, 2943, 9909, 2977, 1353, 1993,
-             4667, 9468, 9714, 2537, 1608, 3382,
-             4513, 6832, 3402, 5255, 121, 346,
-             4658, 1667, 6335, 5744, 3016, 640,
-             3549, 690, 252, 1910, 3131, 5507,
-             2224, 937, 8450, 2133, 3913, 9802,
-             4125, 8580, 9269, 3838, 1116, 876,
-             7220, 5629, 7708, 622, 884, 7829,
-             967, 5541, 9495, 7302, 1284, 2511,
-             7941, 4833, 3200, 8192, 6743, 6330,
-             3699, 8966, 7267, 2148, 1099, 1179,
-             1949, 5223, 9758, 1218, 9061, 874,
-             2094, 6281, 6502, 9801, 6902, 7385,
-             7629, 7869, 2926, 7124, 5170, 4210,
-             9635, 3110, 9043, 2834, 1302, 5785]
-    for k in range(0, len(dados), 6):
-        x1 = dados[k + 2] - dados[k]
-        y1 = dados[k + 3] - dados[k + 1]
-        x2 = dados[k + 4] - dados[k]
-        y2 = dados[k + 5] - dados[k + 1]
-        x3 = dados[k + 4] - dados[k + 2]
-        y3 = dados[k + 5] - dados[k + 3]
-        a = sqrt(x1 ** 2 + y1 ** 2)
-        b = sqrt(x2 ** 2 + y2 ** 2)
-        c = sqrt(x3 ** 2 + y3 ** 2)
-        s = (a + b + c) / 2
-        area = round(sqrt(s * (s - a) * (s - b) * (s - c)), 8)
-        areas.append(area)
-    return f'{[num for num in areas]}'.replace('[', '').replace(']', '').replace(',', '')
+def stringToInteger():
+    """
+    This function open a .csv file and returns a list of
+    integer.
+    :return:
+    """
+    arq = open("problem104.csv")
+    l1 = reader(arq, delimiter=" ")
+    l1 = list(l1)
+    l2, l3 = [], []
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            l1[i][k] = int(l1[i][k])
+            l2.append(l1[i][k])
+        l3.append(l2)
+        l2 = []
+    print(l3)
+    return l3
 
 
-print(triangule_area())
+def sidesOfTheTriangle(l3):
+    """
+    This function takes the list given from the function above
+    as a parameter and return a list of the sides of the triangles.
+    :param l3:
+    :return:
+    """
+    l4, l5 = [], []
+    # This loop takes the coordinates given and find the points
+    # to construct a triangle by distance from your points.
+    for i in range(0, len(l3)):
+        for k in range(0, len(l3[i])):
+            x1 = l3[i][k]
+            y1 = l3[i][k + 1]
+            x2 = l3[i][k + 2]
+            y2 = l3[i][k + 3]
+            x3 = l3[i][k + 4]
+            y3 = l3[i][k + 5]
+            a = sqrt((x2 - x1) ** 2 + (y2 - y1) ** 2)
+            b = sqrt((x3 - x1) ** 2 + (y3 - y1) ** 2)
+            c = sqrt((x3 - x2) ** 2 + (y3 - y2) ** 2)
+            l4.append(a)
+            l4.append(b)
+            l4.append(c)
+            break
+        l5.append(l4)
+        l4 = []
+    return l5
+
+
+def areaOfTheTriangles(l5):
+    """
+    This function takes the parameter given to the function above
+    with the sides of triangles and returns the area for each triangle
+    using the Heron's formula.
+    :param l5:
+    :return:
+    """
+    print(l5)
+    l6 = []
+    for i in range(0, len(l5)):
+        for k in range(0, len(l5[i])):
+            # Below is using the Heron's formula.
+            # It is equal the semi-perimeter of the triangles.
+            s = (l5[i][0] + l5[i][1] + l5[i][2]) / 2
+            a = sqrt(s * (s - l5[i][0]) * (s - l5[i][1]) * (s - l5[i][2]))
+            l6.append(a)
+            break
+    return print(*l6)
+
+
+areaOfTheTriangles(sidesOfTheTriangle(stringToInteger()))
