@@ -1,84 +1,102 @@
-"""
-==================
-Blackjack Counting
-==================
-
-The game of Blackjack has very simple rules: players should take cards one by one trying to collect more points
-than opponents, but not exceeding 21 (refer Wikipedia for complete rules).
-
-The deck contains all cards from 2 to 10 inclusive, which are counted according to their value, also Kings,
-Queens and Jacks which cost 10 points each and also Aces, which could be counted as 1 or 11 points, whatever is
-better.
-
-Let us learn the programming of scoring algorithm for such game.
-
-Input data will contain the number of test-cases in the first line.
-Then test-cases will follow on separate lines. Each test-case consists of several cards expressed with symbols:
-
-2, 3, 4, 5, 6, 7, 8, 9,
-T, J, Q, K - for 10, Jack, Queen, King,
-A - for Ace.
-
-Answer should contain the number of points in each test-case, not exceeding 21 - or the word Bust if the total
-is greater than 21 (i.e. player immediately loss).
-
-Example:
-
-input data:
-4
-A T
-2 K 4
-3 A Q 8
-A 3 3 3 A
-
-answer:
-21 16 Bust 21
-"""
-print('')
+from csv import reader
 
 
-def blackjack_counting():
-    cartas = [2, 3, 4, 5, 6, 7, 8, 9, 'T', 'J', 'Q', 'K', 'A']
-    texto, lista, lista1, n, cont, resultados = '', [], [], 0, 0, []
-    with open('blackjack_counting.txt') as arquivo:
-        dados = list(arquivo)
-    for k in range(0, len(dados)):
-        texto += dados[k]
-        texto = texto.replace('\n', '')
-        texto.split(' ')
-        lista.append(texto)
-        texto = ''
-    for k in range(0, len(lista)):
-        lista1.append(lista[k].split(' '))
-    for k in range(0, len(lista1)):
-        while n < len(lista1[k]):
-            if lista1[k][n] in '23456789':
-                lista1[k][n] = int(lista1[k][n])
-            n += 1
-        n = 0
-    for k in range(0, len(lista1)):
-        while n < len(lista1[k]):
-            if lista1[k][n] == 'T' or lista1[k][n] == 'J' or lista1[k][n] == 'Q' or lista1[k][n] == 'K':
-                cont += 10
-            if lista1[k][n] == 2 or lista1[k][n] == 3 or lista1[k][n] == 4 or lista1[k][n] == 5 or lista1[k][n] == 6 \
-                    or lista1[k][n] == 7 or lista1[k][n] == 8 or lista1[k][n] == 9:
-                cont += lista1[k][n]
-            n += 1
-        if 'A' in lista[k] and cont <= 10  and lista[k].count('A') == 1:
-            cont += 11
-        elif 'A' in lista[k] and cont <= 10 and lista[k].count('A') > 1:
-            a = lista[k].count('A')
-            cont += 11 + (a - 1)
-        elif 'A' in lista[k] and cont > 10:
-            a = lista[k].count('A')
-            cont += a
-        if cont <= 21:
-            resultados.append(cont)
-        if cont > 21:
-            resultados.append('Bust')
-        cont = 0
-        n = 0
-    return f'{[k for k in resultados]}'.replace('[', '').replace(']', '').replace(',', '').replace("'", '')
+def cardsOfTheDeck():
+    """
+    This function return the cards of a deck without count the suits.
+    :return:
+    """
+    l1 = []
+    deck = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
+    for i in range(0, len(deck)):
+        l1.append(deck[i])
+    return l1
 
 
-print(blackjack_counting())
+def valuesOfTheCards():
+    """
+    This function return the values of the cards of a deck under the 
+    rules of Blackjack's game.
+    :return:    
+    """
+    deck = ['2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K', 'A']
+    l2 = []
+    for i in range(0, len(deck)):
+        if deck[i] in "123456789":
+            l2.append(int(deck[i]))
+        elif deck[i] in "TJQK":
+            l2.append(10)
+        elif deck[i] in "A":
+            l2.append(11)
+    return l2
+
+
+def cardsInAList():
+    """
+    This function open a .csv file and return a list with
+    the cards given.
+    :return:
+    """
+    arq = open("problem042.csv")
+    l3 = reader(arq, delimiter=" ")
+    l3 = list(l3)
+    return l3
+
+
+def blackjackCounting(l1, l2, l3):
+    """
+    This function take the parameters given by the functions
+    above and return the result of the game Blackjack, been
+    the respecting the rules of the game.
+    :param l1:
+    :param l2:
+    :param l3
+    :return:
+    """
+    cont1, cont2, l4, n, m = 0, 0, [], 0, 0
+    for i in range(0, len(l3)):
+        for k in range(0, len(l3[i])):
+            #  In this snippet of the code the loop is divided
+            #  in two paths. if there is the ace in the cards received
+            # or not.
+            if "A" in l3[i]:
+                # In this snippet is count the number of aces in the
+                # cards received.
+                n = l3[i].count("A")
+                if l3[i][k] == "A":
+                    cont1 += l2[-1]
+                elif l3[i][k] != "A":
+                    cont1 += l2[l1.index(l3[i][k])]
+                # In this snippet, following the rules of the Blackjack's game
+                # two values can be received the ace cards, 1 or 11.
+                # The chose should be the one whose result is the best, ie
+                # closer or equal to 21.
+                while cont1 > 21:
+                    cont1 -= 10
+                    m += 1
+                    if m > n:
+                        cont1 += 10
+                        break
+            elif "A" not in l3[i]:
+                cont2 += l2[l1.index(l3[i][k])]
+        # In this snippet is counted the points of the cards in the
+        # hand of the player, following the rules of Blackjack game.
+        if cont2 == 0:
+            if cont1 <= 21:
+                l4.append(cont1)
+            else:
+                l4.append("Bust")
+        if cont1 == 0:
+            if cont2 <= 21:
+                l4.append(cont2)
+            else:
+                l4.append("Bust")
+        cont1 = 0
+        cont2 = 0
+        m = 0
+    return print(*l4)
+
+
+blackjackCounting(cardsOfTheDeck(), valuesOfTheCards(), cardsInAList())
+
+# 18 21 18 19 16 17 19 21 16 16 21 21 21 16 21 19 16 Bust 20 Bust

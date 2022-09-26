@@ -1,6 +1,7 @@
 from csv import reader
 from time import sleep
 
+
 def justBrackets():
     """
     This function open a .csv file and return a list of strings.

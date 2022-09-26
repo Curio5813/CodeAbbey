@@ -6,22 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="7b8b4b1e-4d2f-4228-a5ee-f5063941168f" name="Changes" comment="Updating and Refactoring files">
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem032.csv" beforeDir="false" afterPath="$PROJECT_DIR$/problem032.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem032.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem032.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem047.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem049.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem049.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem055.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem055.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem058.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem058.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem061.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem061.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem081.csv" beforeDir="false" afterPath="$PROJECT_DIR$/problem081.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem081.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem081.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem104.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem104.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem042.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem042.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem059.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem059.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem094.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem094.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem128.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test01.csv" beforeDir="false" afterPath="$PROJECT_DIR$/test01.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test02.py" beforeDir="false" afterPath="$PROJECT_DIR$/test02.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test03.py" beforeDir="false" afterPath="$PROJECT_DIR$/test03.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test04.py" beforeDir="false" afterPath="$PROJECT_DIR$/test04.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test05.py" beforeDir="false" afterPath="$PROJECT_DIR$/test05.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test05.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,8 +57,8 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.problem061">
-    <configuration name="problem049" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.problem042">
+    <configuration name="problem042" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -75,7 +70,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem049.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem042.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -84,7 +79,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="problem055" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="problem059" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -96,7 +91,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem055.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem059.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -105,7 +100,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="problem058" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="problem094" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -117,7 +112,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem058.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem094.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -126,7 +121,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="problem061" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="problem128" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -138,7 +133,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem061.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem128.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,7 +142,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test05" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test01" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -159,7 +154,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test05.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test01.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.problem061" />
-        <item itemvalue="Python.problem055" />
-        <item itemvalue="Python.test05" />
-        <item itemvalue="Python.problem058" />
-        <item itemvalue="Python.problem049" />
+        <item itemvalue="Python.problem042" />
+        <item itemvalue="Python.test01" />
+        <item itemvalue="Python.problem128" />
+        <item itemvalue="Python.problem094" />
+        <item itemvalue="Python.problem059" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1662815838788</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Updating and Refactoring files">
+      <created>1663685529014</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1663685529014</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
