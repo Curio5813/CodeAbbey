@@ -19,18 +19,22 @@ def josephusProblem():
     n, a, l2 = l1[0], l1[1], []
     for i in range(1, n + 1):
         l2.append(i)
-    for i in range(n):
-        for k in range(0, len(l2)):
-            if len(l2) == 1:
-                break
-            if a > len(l2) - 1:
+    # This snippet of this code iterates into the list created and
+    # pop the number from the list which is the multiple from a
+    # given number excluding the number itself.
+    while len(l2) > 1:
+        while len(l2) > 1:
+            # This snippet of the code iterate over the list until the value is
+            # less than length of the list and the list have only one element.
+            if a > len(l2):
                 a -= len(l2)
                 break
             else:
+                # This snippet exclude the number in the list by gotten the
+                # index above.
                 l2.pop(a - 1)
                 a += l1[1] - 1
-            print(l2)
     return print(*l2)
 
 
-josephusProblem()  # dados: 44 8, answer: 38
+josephusProblem()

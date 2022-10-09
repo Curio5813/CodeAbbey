@@ -11,7 +11,7 @@ def stringToAscii():
     l1 = list(*l1)
     for i in range(0, len(l1)):
         l1[i] = int(l1[i])
-    print(l1)
+
     return l1
 
 
@@ -21,7 +21,7 @@ def stringToChart():
     Ascii Character.
     """
     arq2 = open("problem033-chart.csv")
-    l2 = reader(arq2, delimiter=" ")
+    l2 = reader(arq2, delimiter=",")
     l2 = list(*l2)
     return l2
 
@@ -41,59 +41,59 @@ def stringToData():
 def convertAsciiToBinary(l3):
     """
     This function opens a .csv files and has the return a list of
-    string represented in binary base.
+    string represented in binary number.
     :return:
     """
-    l4, l5, l6 = [], "", []
+    b, l4 = "", []
     for i in range(0, len(l3)):
-        l4.append(bin(l3[i]))
-        l5 = "" + l4[i][2:]
-        l6.append(l5)
-    return l6
+        b = bin(l3[i]).replace("0b", "")
+        b = b[::-1]
+        while len(b) < 8:
+            b += "0"
+        b = b[::-1]
+        l4.append(b)
+    return l4
 
 
-def parityControl(l6):
+def parityControl(l4):
     """
     This function take a list of binary number, given from the
     function above and return a list of the binary fixing it when
-    losing bits in broadcasting.
-    :param l6:
+    loses bits in broadcasting, and excluding the corrupted bytes.
+    :param l4:
     :return:
     """
-    l7, l8, l9 = "", [], []
-    for i in range(0, len(l6)):
-        for k in range(0, len(l6[i])):
-            if l6[i].count("1") % 2 != 0:
-                if l6[i][k] == "1":
-                    l7 = "0" + l6[i][1:]
-                    l8.append(int(l7, 2))
-                    break
-                elif l6[i][k] == "0":
-                    l7 = "0" + l6[i][:]
-                    l8.append(int(l7, 2))
-                    break
-            else:
-                l7 = l6[i]
-                l8.append(int(l7, 2))
-                break
-    return l8
+    l5 = []
+    for i in range(0, len(l4)):
+        # Doing the Parity Control, excluding the binary number with odd numbers of bits.
+        if l4[i].count("1") % 2 == 0:
+            if l4[i][0] == "1":
+                l4[i] = "0" + l4[i][1:]
+                l5.append(l4[i])
+            elif l4[i][0] == "0":
+                l5.append(l4[i])
+    return l5
 
 
-def asciiChart(l8, l1, l2):
+def asciiChart(l5, l2, l1):
     """
-    This function return the charters in latin letter from the list
-    given by the function above with the Ascii code.
-    :param l8:
+    This function return the charters in latin letter and it's digits from the lists
+    given by the functions above using the Ascii code.
+    :param l5:
     :param l2:
+    :param l1:
     :return:
     """
-    print(l8)
-    name = ""
-    for i in l8:
-        for k in l1:
-            if i in l1:
-                name += l2[l1.index(i)]
+    l6, l7, name, phrase = [], [],  "", ""
+    for i in range(0, len(l5)):
+        # Change the binary number to decimal number.
+        num = int(l5[i], 2)
+        l6.append(num)
+    for i in range(0, len(l6)):
+        if l6[i] in l1:
+            # Use the decimal number took above and use it in Ascii code.
+            name += l2[l1.index(l6[i])]
     return print(name)
 
 
-asciiChart(parityControl(convertAsciiToBinary(stringToData())), stringToAscii(), stringToChart())
+asciiChart(parityControl(convertAsciiToBinary(stringToData())), stringToChart(), stringToAscii())

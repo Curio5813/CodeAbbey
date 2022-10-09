@@ -33,7 +33,8 @@ def savingsCalculator(l3):
             sav = l3[i][0]
             mont = l3[i][1]
             while sav <= mont:
-                rat = (l3[i][2] / 100) + 1  # It is a compound capitalization.
+                # It is a compound capitalization.
+                rat = (l3[i][2] / 100) + 1
                 sav *= rat
                 sav = round(sav, 2)
                 cont += 1
