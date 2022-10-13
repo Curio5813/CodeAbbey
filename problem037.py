@@ -1,71 +1,44 @@
-"""
-===================
-Mortgage Calculator
-===================
+from csv import reader
 
-Banking provides us with many interesting programming problems. The following one is more complicated
-than Savings calculator which you perhaps learned earlier.
 
-After Joel bought a boat he has got the new idea - to buy a house. Since he did not want to wait until
-necessary sum is collected, he considers a mortgage, which is to get a loan from bank and buy a house
-immediately, while loan is secured by this house (i.e., in case of borrower's default bank gets the house
-in compensation).
+def stringToInteger():
+    """
+    This function open a .csv file a return a list of integer.
+    :return:
+    """
+    arq = open("problem037.csv")
+    l1 = reader(arq, delimiter=" ")
+    l1 = list(*l1)
+    for i in range(0, len(l1)):
+        l1[i] = int(l1[i])
+    return l1
 
-Mathematically, mortgage works by the following algorithm:
 
-Joel borrows big money sum P from bank (and performs purchase);
-bank tells him its interest rate R in percents - the speed of growth of the debt;
-at the end of each month the debt is increased by R / 12 percents;
-immediately after it Joel gives to bank some predefined small sum M to decrease the debt;
-debt is considered settled when its value is reduced to zero (this could take several years).
-For example, Joel takes P = $800,000 from bank with interest rate of R = 6%. He is willing to pay M = $10000
-at the end of each month.
+def mortgageCalculator(l1):
+    """
+    This function receives three value, the value of the loan,
+    the rate and the term to pay all debits and return the
+    value of parcels rounded to the first integer above.
+    :return:
+    :param l1:
+    :return:
+    """
+    loan, r, term, month = 0, 0, 0, 0
+    for i in range(0, len(l1)):
+        loan, r, term = l1[i], l1[i + 1], l1[i + 2]
+        break
+    r = (r / 12) / 100
+    parcel = round(loan / term)
+    while loan > 0:
+        loan += loan * r
+        loan -= parcel
+        loan = round(loan)
+        month += 1
+        if month == term and loan > 0:
+            parcel += 1
+            loan = l1[0]
+            month = 0
+    return print(round(parcel))
 
-Month     P        P * (R/12)%      -M       new P
-  1    $800000       $4000       -$10000    $794000
-  2    $794000       $3970       -$10000    $787970
-  3    $787970       $3940       -$10000    $781910
- ...
- 12    $732325       $3662       -$10000    $725987
- ...
- 24    $654138       $3271       -$10000    $647408
- ...
- 103     $4188         $21        -$4209         $0
 
-So after 103 months (which is about 8.5 years) the debt could be payed out. The last payment of course could
-be less than M (since P need not to become negative). Note that he will pay out about:
-
-102 * $10000 + $4209 = 1024209
-which is 25% more than the cost of the house.
-
-Joel asks you (the mighty programmer) to help him with the calculation of necessary monthly payment M.
-
-Input data contains values for loan size P, interest rate R and length of time to pay out L in months.
-Answer should contain the required monthly payment M rounded up to whole dollars (i.e. if you get non-integer
-result, increase it to nearest integer which is greater).
-
-Example:
-
-input data:
-800000 6 103
-
-answer:
-9957
-"""
-
-print('')
-tempo = 90
-valor = 3600000
-taxa = 2
-mes = 0
-amortizacao = round(valor / tempo)
-while mes != tempo and valor > 0:
-    valor += valor * ((taxa / 12) / 100)
-    valor -= amortizacao
-    valor = round(valor)
-    mes += 1
-    if mes == tempo and valor > 0:
-        amortizacao += 1
-        valor = 3600000
-        mes = 0
-print(amortizacao)
+mortgageCalculator(stringToInteger())

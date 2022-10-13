@@ -91,7 +91,7 @@ def asciiChart(l5, l2, l1):
         l6.append(num)
     for i in range(0, len(l6)):
         if l6[i] in l1:
-            # Use the decimal number took above and use it in Ascii code.
+            # Use the decimal number took from above and use it in Ascii code.
             name += l2[l1.index(l6[i])]
     return print(name)
 

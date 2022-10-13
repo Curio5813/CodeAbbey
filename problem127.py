@@ -1,68 +1,76 @@
-"""
-========
-Anagrams
-========
-
-The idea proposed by Guy Gervais was so fruitful that it allows to create more than one problem from it.
-Here is the simpler one.
-
-In many natural languages we can find some pairs of words which could be transformed to each other by
-changing the order of letters. I.e. they consist of the same set of letters, for example:
-
-cat - act take - teak ate - eat - tea
-
-Such words are called anagrams and as we see in the third example sometimes there are more than two words.
-
-Your task is to find out the amount of anagrams for given word by the dictionary.
-
-Click this link with right mouse button and select "Save As" to download dictionary file
-
-Dictionary file contains a list of english words, one per line. It was taken from Ubuntu linux distribution
-and stripped of words containing capital letters, apostrophes and non-english letters.
-
-Input data will contain the number of test-cases in the first line.
-Next lines will contain a single word each.
-Answer should contain the number of anagrams for each word (not including the word itself).
-
-Example:
-
-input data:
-3
-bat
-coal
-lots
-
-answer:
-1 1 2
-"""
-print('')
+from itertools import permutations
+from csv import reader
 
 
-def anagrams():
-    from itertools import permutations
-    palavra, words, anagrama, anagramas, n, cont, encontradas = '', [], {()}, [], 0, 0, []
-    with open('words.txt') as arquivo:
-        lista = list(arquivo)
-    for k in range(0, len(lista)):
-        palavra += lista[k]
-        palavra = palavra.replace('\n', '')
-        words.append(palavra)
-        palavra = ''
-    palavra = ['ingress', 'reveres', 'parties', 'reaps', 'setters', 'derange', 'rapiers', 'predator']
-    for k in range(0, len(palavra)):
-        anagrama.update(''.join(x) for x in permutations(palavra[k]))
-        anagrama.discard(palavra[k])
-        anagramas.append(list(anagrama))
-        anagrama = set()
-    for k in range(0, len(anagramas)):
-        while n < len(anagramas[k]):
-            if anagramas[k][n] in words:
+def dictIntoArray():
+    """
+    This function open a .csv file and return a list of english
+    words in dictionary.
+    :return:
+    """
+    arq = open("problem127-dict.csv")
+    l1 = reader(arq, delimiter="\n")
+    l1 = list(l1)
+    l2 = []
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            l2.append(l1[i][k])
+    return l2
+
+
+def strinstIntoArray():
+    """
+    This function open a .csv file and return a list of english
+    words.
+    :return:
+    """
+    arq = open("problem127-data.csv")
+    l3 = reader(arq, delimiter="\n")
+    l3 = list(l3)
+    l4 = []
+    for i in range(0, len(l3)):
+        for k in range(0, len(l3[i])):
+            l4.append(l3[i][k])
+    return l4
+
+
+def anagrams(l2, l4):
+    """
+    This function receive a list of english words as one
+    parameter and also the words in the english's dictionary
+    as another parameter and return the number the all words in
+    a anagrams is in the english dictionary (not including
+    the word itself).
+    :param l2
+    :param l4:
+    :return:
+    """
+    word, per, l5, l6, l7, cont = "", [], [], [], [], -1
+    for i in range(0, len(l4)):
+        # Permutation words using Intertools Library
+        # pushed to a array per.
+        per.append((list(permutations(l4[i]))))
+    for i in range(0, len(per)):
+        for k in range(0, len(per[i])):
+            for m in range(0, len(per[i][k])):
+                # Concatenating strings to form a word.
+                word += per[i][k][m]
+            if word not in l5:
+                # Eliminate word in duplicity.
+                l5.append(word)
+            word = ""
+        l6.append(l5)
+        l5 = []
+    for i in range(0, len(l6)):
+        for k in range(0, len(l6[i])):
+            # In this snippet of the code puts in a list the words
+            # that have in the English dictionary using the anagrams
+            # formed with the given words.
+            if l6[i][k] in l2:
                 cont += 1
-            n += 1
-        encontradas.append(cont)
-        cont = 0
-        n = 0
-    print(*encontradas)
+        l7.append(cont)
+        cont = -1
+    return print(*l7)
 
 
-anagrams()
+anagrams(dictIntoArray(), strinstIntoArray())

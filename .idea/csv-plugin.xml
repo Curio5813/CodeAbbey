@@ -164,6 +164,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/problem036.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/problem037.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/problem038.csv">
           <value>
             <Attribute>
@@ -318,6 +332,27 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/problem120.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/problem127-data.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/problem127.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/problem128.csv">
           <value>
             <Attribute>
@@ -325,7 +360,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/problem171.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/test01.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/test02.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

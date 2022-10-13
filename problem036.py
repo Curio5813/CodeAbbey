@@ -1,210 +1,102 @@
-"""
-============
-Code Guesser
-============
-
-If you know the old game Bulls and Cows, this programming problem will look familiar to you.
-
-Andrew and Peter play the code-guessing game. Andrew chooses a secret number consisting of 3 digits. Peter
-tries to guess it, proposing several values, one by one.
-
-For each guess Andrew should answer how many digits are correct - i.e. are the same in the proposed value and
-in his secret number - and are placed in the same position. For example, if secret number is 125 and Peter calls
-523, then Andrew answers with 1. Here is the sample of the game:
-
-Andrew chooses a secret number 846
-
-Peter's guess             Andrew's answer
-      402                        0
-      390                        0
-      816                        2
-      848                        2
-      777                        0
-      815                        1
-      846                        3
-
-So Peter have guessed correct number after 6 attempts.
-
-You are to write program which reads guesses given by Peter (except the last) and prints out the secret number
-choosen by Andrew. It is guaranteed that exactly one solution exists.
-
-Input data will contain number of guesses in the first line.
-Then answers with attempts will follow - each contains the number told by Peter and the answer given by Andrew.
-In contrast with examples numbers will be of 4 digits.
-Answer should contain the secret number (also 4 digits). See example:
-
-input data:
-6
-402 0
-390 0
-816 2
-848 2
-777 0
-815 1
-
-answer:
-846
-Here we use 3-digit values for brevity, but the algorithm is the same.
-"""
-print('')
+from csv import reader
 
 
-def code_guesser():
-    texto, dados = '', []
-    wrong0, wrong1, wrong2, wrong3 = [], [], [], []
-    doubt0, doubt1, doubt2, doubt3 = [], [], [], []
-    lessdoubt0, lessdoubt1, lessdoubt2, lessdoubt3 = [], [], [], []
-    veryclue0, veryclue1, veryclue2, veryclue3 = [], [], [], []
-    clue0, clue1, clue2, clue3 = [], [], [], []
-    n = 0
-    sure0, sure1, sure2, sure3 = [], [], [], []
-    sure, answer = [], []
-    with open('code_guesser.txt') as arquivo:
-        lista = list(arquivo)
-    for k in range(0, len(lista)):
-        texto += lista[k]
-        texto = texto.replace('\n', '')
-        dados.append(texto.split(' '))
-        texto = ''
-    for k in range(0, len(dados)):
-        if dados[k][1] == '0':
-            wrong0.append(dados[k][0][0])
-            wrong1.append(dados[k][0][1])
-            wrong2.append(dados[k][0][2])
-            wrong3.append(dados[k][0][3])
-        if dados[k][1] == '1':
-            doubt0.append(dados[k][0][0])
-            doubt1.append(dados[k][0][1])
-            doubt2.append(dados[k][0][2])
-            doubt3.append(dados[k][0][3])
-        if dados[k][1] == '2':
-            lessdoubt0.append(dados[k][0][0])
-            lessdoubt1.append(dados[k][0][1])
-            lessdoubt2.append(dados[k][0][2])
-            lessdoubt3.append(dados[k][0][3])
-    while n < len(doubt0):
-        if doubt0[n] not in wrong0:
-            clue0.append(doubt0[n])
-        elif doubt0[n] in wrong0:
-            clue0.append('x')
-        if doubt1[n] not in wrong1:
-            clue1.append(doubt1[n])
-        elif doubt1[n] in wrong1:
-            clue1.append('x')
-        if doubt2[n] not in wrong2:
-            clue2.append(doubt2[n])
-        elif doubt2[n] in wrong2:
-            clue2.append('x')
-        if doubt3[n] not in wrong3:
-            clue3.append(doubt3[n])
-        elif doubt3[n] in wrong3:
-            clue3.append('x')
-        n += 1
-    print(wrong0)
-    print(wrong1)
-    print(wrong2)
-    print(wrong3)
-    print('')
-    print(doubt0)
-    print(doubt1)
-    print(doubt2)
-    print(doubt3)
-    print('')
-    print(clue0)
-    print(clue1)
-    print(clue2)
-    print(clue3)
-    n = -1
-    while n >= -len(clue0):
-        if clue0[n] != 'x' and clue1[n] == 'x' and clue2[n] == 'x' and clue3[n] == 'x':
-            sure0.append(clue0[n])
+def stringToInteger():
+    """
+    This function open a .csv file and return a list of nested string.
+    :return:
+    """
+    arq = open("problem036.csv")
+    l1 = reader(arq, delimiter=" ")
+    l1 = list(l1)
+    return l1
+
+
+def noNumber(l1):
+    """
+    This function take the parameter above and return a list with
+    no guessed number.
+    :param l1:
+    :return:
+    """
+    l2, l3, l4 = [], [], []
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            if l1[i][1] == "0":
+                l2.append(l1[i][k])
             break
-        n -= 1
-    n = -1
-    while n >= - len(clue1):
-        if clue1[n] != 'x' and clue0[n] == 'x' and clue2[n] == 'x' and clue3[n] == 'x':
-            sure1.append(clue1[n])
-            break
-        n -= 1
-    n = -1
-    while n >= - len(clue2):
-        if clue2[n] != 'x' and clue0[n] == 'x' and clue1[n] == 'x' and clue3[n] == 'x':
-            sure2.append(clue2[n])
-            break
-        n -= 1
-    n = -1
-    while n >= -len(clue3):
-        if clue3[n] != 'x' and clue0[n] == 'x' and clue1[n] == 'x' and clue2[n] == 'x':
-            sure3.append(clue3[n])
-            break
-        n -= 1
-    while len(sure0) == 0 and len(sure1) == 0 and len(sure2) == 0 and len(sure3) == 0:
-        n = -1
-        if len(sure0) > 0:
-            while n > -len(clue0):
-                if clue0[n] != sure0[0]:
-                    if clue1[n] != 'x' and clue2[n] == 'x' and clue3[n] == 'x':
-                        if len(sure1) == 0:
-                            sure1.append(clue1[n])
-                    if clue2[n] != 'x' and clue1[n] == 'x' and clue3[n] == 'x':
-                        if len(sure2) == 0:
-                            sure2.append(clue2[n])
-                    if clue3[n] != 'x' and clue1[n] == 'x' and clue2[n] == 'x':
-                        if len(sure3) == 0:
-                            sure3.append(clue3[n])
-                n -= 1
-        n = -1
-        if len(sure1) > 0:
-            while n > -len(clue1):
-                if clue1[n] != sure1[0]:
-                    if clue0[n] != 'x' and clue2[n] == 'x' and clue3[n] == 'x':
-                        if len(sure0) == 0:
-                            sure0.append(clue0[n])
-                    if clue2[n] != 'x' and clue0[n] == 'x' and clue3[n] == 'x':
-                        if len(sure2) == 0:
-                            sure2.append(clue2[n])
-                    if clue3[n] != 'x' and clue0[n] == 'x' and clue2[n] == 'x':
-                        if len(sure3) == 0:
-                            sure3.append(clue3[n])
-                n -= 1
-        n = -1
-        if len(sure2) > 0:
-            while n > -len(clue2):
-                if clue2[n] != sure2[0]:
-                    if clue0[n] != 'x' and clue1[n] == 'x' and clue3[n] == 'x':
-                        if len(sure0) == 0:
-                            sure0.append(clue0[n])
-                    if clue1[n] != 'x' and clue0[n] == 'x' and clue3[n] == 'x':
-                        if len(sure1) == 0:
-                            sure1.append(clue1[n])
-                    if clue3[n] != 'x' and clue0[n] == 'x' and clue1[n] == 'x':
-                        if len(sure3) == 0:
-                            sure3.append(clue3[n])
-                n -= 1
-        n = -1
-        if len(sure3) > 0:
-            while n > -len(clue3):
-                if clue3[n] != sure3[0]:
-                    if clue0[n] != 'x' and clue1[n] == 'x' and clue2[n] == 'x':
-                        if len(sure0) == 0:
-                            sure0.append(clue0[n])
-                    if clue1[n] != 'x' and clue0[n] == 'x' and clue2[n] == 'x':
-                        if len(sure1) == 0:
-                            sure1.append(clue1[n])
-                    if clue2[n] != 'x' and clue0[n] == 'x' and clue1[n] == 'x':
-                        if len(sure2) == 0:
-                            sure2.append(clue2[n])
-                n -= 1
-    sure.append(sure0[0])
-    sure.append(sure1[0])
-    sure.append(sure2[0])
-    sure.append(sure3[0])
-    n = 0
-    while n < len(sure):
-        texto += sure[n]
-        n += 1
-    answer.append(int(texto))
-    print(*answer)
+    for i in range(0, len(l2)):
+        for k in range(0, len(l2[i])):
+            for m in range(0, len(l2[i][k])):
+                l3.append(l2[i][k][m])
+        l4.append(l3)
+        l3 = []
+    return l4
 
 
-code_guesser()
+def oneNumber(l1):
+    """
+    This function take the parameter and return a list os string that
+    was guessed one number.
+    :param l1:
+    :return:
+    """
+    l5, l6, l7 = [], [], []
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            if l1[i][1] == "1":
+                l5.append(l1[i][k])
+            break
+    for i in range(0, len(l5)):
+        for k in range(0, len(l5[i])):
+            for m in range(0, len(l5[i][k])):
+                l6.append(l5[i][k][m])
+        l7.append(l6)
+        l6 = []
+    return l7
+
+
+def twoNumbers(l1):
+    """
+    This function take the parameter and return a list os string that
+    was guessed one number.
+    :param l1:
+    :return:
+    """
+    l8, l9, l10 = [], [], []
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            if l1[i][1] == "2":
+                l8.append(l1[i][k])
+            break
+    for i in range(0, len(l8)):
+        for k in range(0, len(l8[i])):
+            for m in range(0, len(l8[i][k])):
+                l9.append(l8[i][k][m])
+        l10.append(l9)
+        l9 = []
+    return l10
+
+
+def guesserNumbers(l4, l7, l10):
+    """
+    This function take the parameter and return a guessed number.
+    :param l4
+    :param l7
+    :param l10
+    :return
+    """
+    print(l4)
+    print(l7)
+    print(l10)
+    g = []
+    for i in range(0, len(l10)):
+        if i >= len(l10) - 1:
+            break
+        for k in range(0, len(l10[i])):
+            for m in range(0, len(l10[i][k])):
+                if l10[i][k][m] == l10[i + 1][k][m]:
+                    g.append(l10[i][k][m])
+
+
+guesserNumbers(noNumber(stringToInteger()), oneNumber(stringToInteger()), twoNumbers(stringToInteger()))
