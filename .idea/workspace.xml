@@ -4,25 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b8b4b1e-4d2f-4228-a5ee-f5063941168f" name="Changes" comment="Updating and Refactoring files">
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/problem019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem019.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem019.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem033.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem033.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem034.csv" beforeDir="false" afterPath="$PROJECT_DIR$/problem034.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem034.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem034.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem036.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem036.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem036_test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem037.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem120.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem120.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem127.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem127.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem171.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem171.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test01.py" beforeDir="false" afterPath="$PROJECT_DIR$/test01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test02.py" beforeDir="false" afterPath="$PROJECT_DIR$/test02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test03.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test04.py" beforeDir="false" />
-    </list>
+    <list default="true" id="7b8b4b1e-4d2f-4228-a5ee-f5063941168f" name="Changes" comment="Updating and Refactoring files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -320,7 +302,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665316514622</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Updating and Refactoring files">
+      <created>1665689170661</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1665689170661</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
