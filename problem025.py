@@ -39,8 +39,10 @@ def linearCongruentialGenerator(l3):
         xc = l3[i][3]
         n = l3[i][4]
         while cont < n:
-            nex = (a * xc + c) % m  # This is the formula of Linear Congruential Generator
-            xc = nex  # This updating the value of nex
+            # This is the formula of Linear Congruential Generator
+            nex = (a * xc + c) % m
+            # This updating the value of nex
+            xc = nex
             cont += 1
         l4.append(nex)
         cont = 0

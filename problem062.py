@@ -1,80 +1,59 @@
-"""
-============
-Prime Ranges
-============
-
-If you already solved Prime Numbers Generation - here is an inverse version of it.
-
-Given several pairs of primes (like a, b) you are to tell for each of them the total quantity of primes in
-the range limited by these values (inclusive), i.e. such p-s that:
-
-isPrime(p) = true
-
-    and
-
-a <= p <= b
-
-Input data: will contain the amount of pairs in the first line.
-Next lines will contain one pair of primes each, the first value is always less than the second. All values
-will be less than 3000000.
-
-Answer should contain the quantity of primes in the ranges specified by these pairs.
-
-Example:
-
-input data:
-3
-5 19
-11 29
-2 23
-
-answer:
-6 6 9
-
-Hint: you may start with generation of the array (or list) of primes in ascending order. However you will
-need to use some effective method for searching values in this list, otherwise your program would work
-significantly slower than it should.
-"""
-print('')
+from csv import reader
 
 
-def prime_ranges():
-    dado, dados, n, z, listas, numeros, tamanho_numeros = '', [], 0, 0, [], [], []
-    with open('prime_ranges.txt') as arquivo:
-        lista = list(arquivo)
-    for k in range(0, len(lista)):
-        dado += lista[k]
-        dado = dado.replace('\n', '')
-        dado.split(' ')
-        dados.append(dado.split(' '))
-        dado = ''
-    lista = []
-    for k in range(0, len(dados)):
-        while n < len(dados[k]):
-            lista.append(int(dados[k][n]))
-            n += 1
-        listas.append(lista)
-        n = 0
-        lista = []
-    primos = []
-    limite = 3000000 + 1
-    nao_primo = set()
-    for n in range(2, limite):
-        if n in nao_primo:
+def stringToInteger():
+    """
+    This function open a csv file and return a list with integer.
+    :return:
+    """
+    arq = open("problem062.csv")
+    l1 = reader(arq, delimiter=" ")
+    l1 = list(l1)
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            l1[i][k] = int(l1[i][k])
+    print(l1)
+    return l1
+
+
+def primeNumbers():
+    """
+    This function return all prime numbers from 2 to
+    3_000_000.
+    :return:
+    """
+    p, n_p, lim = [], set(), 3_000_000
+    for i in range(2, lim):
+        if i in n_p:
             continue
-        for f in range(n * 2, limite, n):
-            nao_primo.add(f)
-        primos.append(n)
-    for k in range(0, len(listas)):
-        while primos[z] < listas[k][0]:
-            z += 1
-        while listas[k][0] <= primos[z] <= listas[k][1]:
-            numeros.append(primos[z])
-            z += 1
-        tamanho_numeros.append(len(numeros))
-        z = 0
-        numeros = []
-    print(*tamanho_numeros)
+        for k in range(i * 2, lim, i):
+            n_p.add(k)
+        p.append(i)
+    return p
 
 
-prime_ranges()
+def primeRanges(l1, p):
+    """
+    This function take the parameter given by the functions above.
+    One of a list o pair primes numbers and the second parameter is
+    given a list of prime numbers until 3_000_000 and return the
+    quantity of primes in the ranges specified by these pairs of
+    prime numbers.
+    :param l1
+    :param p
+    :return
+    """
+    idx0, idx1, l2, l3 = 0, 0, [], []
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            # catching the index in the prime number's list.
+            idx0 = p.index(l1[i][0])
+            idx1 = p.index(l1[i][1])
+        for m in range(idx0, idx1 + 1):
+            l2.append(p[m])
+        l3.append(len(l2))
+        l2 = []
+    return print(*l3)
+
+
+primeRanges(stringToInteger(), primeNumbers())

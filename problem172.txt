@@ -1,0 +1,57 @@
+Sofia trabalha como gerente de vendas na rede de varejistas.
+
+Agora, a empresa vai lançar várias novidades em suas lojas. O único problema é
+que o nome das novas marcas ainda não foi escolhido.
+
+Sofia é condenada a inventar esses nomes. No entanto, muitas palavras boas já são
+usadas (como Apple, Ikea, Gillet). Então ela pediu que você escrevesse um programa
+que pudesse gerar uma coleção de palavras engraçadas. Ela então poderá ler a lista
+com calma e escolher algumas para nomes de marcas.
+
+Vamos trabalhar pelo seguinte algoritmo:
+
+Deixe que as palavras tenham uma quantidade arbitrária de letras, mas letras em
+posições ímpares (1, 3, 5, ...) devem ser consonantes, enquanto letras em posições
+pares (2, 4, 6, ...) - como galaban, fanero - uma vez que tais palavras são garantidamente
+fáceis de pronunciar. Vamos concordar que as letras consoantes são bcdfghjklmnprstvwxz e
+as vogais são aeiou (observe q e y são omitidos). Implemente o Gerador Congruente Linear
+simples com os parâmetros A = 445, C = 700001, M = 2097152 - e o valor inicial X0 para a
+sequência (ou seja, semente) seria fornecido a você como dados de entrada.
+Para gerar palavras compostas por N letras, gere a mesma quantidade de próximos números
+aleatórios com este gerador, por exemplo, com X0 = 0 e N = 4 você obterá os números 700001,
+1821950, 1967079, 1537772. converta cada um desses valores aleatórios para letra tomando o
+módulo 19 para consoantes ou 5 para vogais e selecionando a letra das strings acima (veja o passo 2)
+simplesmente pelo índice. Por exemplo, se X0 = 0 e devemos gerar a palavra de 4 letras, temos
+os seguintes cálculos:
+
+Carta de Índice de Carta de Valor Aleatório
+   700001 700001% 19 = 3F
+  1821950 1821950% 5 = 0A
+  1967079 1967079 % 19 = 9 M
+  1537772 1537772 % 5 = 2 I
+Portanto, a palavra resultante é fami.
+
+Certamente, podemos gerar muitas palavras sem resetar nosso gerador aleatório,
+já que este gerador possui um período de cerca de 2 milhões de valores.
+
+Os dados de entrada conterão o número de palavras a serem geradas na primeira linha
+e o valor de semente X0 para o gerador aleatório.
+A próxima linha conterá comprimentos de palavras que devem ser geradas, separadas por espaços.
+A resposta deve conter as palavras que você gerou, também separadas por espaço.
+
+Exemplo:
+
+dados de entrada:
+3 0
+4 5 6
+
+responda:
+famí wovaw kelasi
+Outro exemplo:
+
+dados de entrada:
+4 2014
+9 9 9 9
+
+responda:
+foravanad zibecefeb wagabenip wedivonow

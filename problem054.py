@@ -1,63 +1,56 @@
-"""
-===================
-Pythagorean Triples
-===================
-
-As we know, the Pythagorean Theorem tells us about the simple equation:
-
-a^2 + b^2 = c^2
-
-There really exist such triples a, b, c of integer numbers, which satisfy this equation. This is not self-evident
-fact, moreover there are no such triples for any other powers except 2 - this is the famous Fermat Theorem which
-could not be solved for more than 350 years.
-
-However, for the power of 2 there are countless amount of such triples. One of them 3, 4, 5, for example.
-
-Nevertheless, it is not always easy to find a triple satisfying some specific conditions:
-
-In this problem you need to write a program which for given value of s = a + b + c will find the only triple which
-satisfies the equation.
-
-For example, given sum of 12 the only 3, 4, 5 triple fits, for sum 30 the only 5, 12, 13 etc.
-
-Input data will contain the number of test-cases in the first line.
-Other lines will contain a single value each - the sum for which triple should be found.
-
-Answer should contain the values of c^2 for each triple found (it is equal to a^2 + b^2 of course), separated
-with spaces.
-
-Note: the real values of s would be large enough, about 10e+7 - so the simplest solutions could be inefficient.
-
-Example:
-
-input data:
-2
-12
-30
-
-answer:
-25 169
-"""
-print('')
+from csv import reader
+from math import gcd
 
 
-def pythagorean_triples():
-    texto, dados, n, quadrados_hipotenusa, answer = '', [], 0, 0, []
-    with open('pythagorean_triples.txt') as arquivo:
-        lista = list(arquivo)
-    for k in range(0, len(lista)):
-        texto += lista[k]
-        texto = texto.replace('\n', '')
-        texto = int(texto)
-        dados.append(texto)
-        texto = ''
-    for k in range(0, len(dados)):
-        for c in range(0, dados[k]):
-            for b in range(0, dados[k]):
-                for a in range(0, dados[k]):
-                    if c > b > a and a + b + c == dados[k] and c ** 2 == a ** 2 + b ** 2:
-                        answer.append(c ** 2)
-    print(*answer)
+def stringToInteger():
+    """
+    This function open a .csv file and return a list of
+    integer numbers.
+    :return:
+    """
+    l2 = []
+    arq = open("problem054.csv")
+    l1 = reader(arq, delimiter="\n")
+    l1 = list(l1)
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            num = int(l1[i][k])
+            l2.append(num)
+    print(l2)
+    return l2
 
 
-pythagorean_triples()
+def pythagoreanTriples(l2):
+    """
+    This function takes the parameter given by the function above, a
+    list of integers, which are the sum of the Pythagorean triples,
+    and returns the number "a", the hypotenuse squared, that
+    satisfies the equation a² = b² + c², of the Pythagoras Theorem.
+    :param l2:
+    :return:
+    """
+    l3, l4, i = [], [], 0
+    for i in range(0, len(l2)):
+        l4.append(0)
+    for m in range(1, 10_000):
+        for n in range(1, 10_000):
+            if gcd(m, n) == 1 and m > n:
+                # Euclid's formula to find the pythagorean triples.
+                # m and n should to be prime each others.
+                a = m ** 2 + n ** 2
+                b = 2 * m * n
+                c = (m ** 2 - n ** 2)
+                l3.append(a)
+                l3.append(b)
+                l3.append(c)
+                soma = sum(l3)
+                if soma in l2:
+                    idx = l2.index(soma)
+                    h = a ** 2
+                    l4.insert(idx, h)
+                    l4.pop(idx + 1)
+            l3 = []
+    return print(*l4)
+
+
+pythagoreanTriples(stringToInteger())

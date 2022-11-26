@@ -1,0 +1,27 @@
+O Coelho vai atravessar o rio. Há uma cadeia reta de pequenas ilhas atravessando
+o fluxo e o animal deve pular de uma para outra porque certamente não sabe nadar.
+
+Em cada uma das ilhas há alguns doces. Quando o Coelho chega à nova ilha, ele coleta
+todos os doces aqui.
+
+No entanto, o Coelho não poderia pular diretamente para a próxima ilha na cadeia - ele
+é forte demais para fazer saltos curtos. Então, em vez disso, ele pode pular uma ou
+duas ilhas (ou seja, da 1ª, por exemplo, para a 3ª ou 4ª, mas não para a 2ª ou 5ª e além).
+Também o Coelho não podia saltar para trás.
+
+Você pode ver a amostra do caminho do Coelho no desenho acima. Visita as 1ª, 3ª, 6ª e 8ª
+ilhas e recolhe:
+
+11 + 3 + 13 + 7 = 34
+a quantidade de 34 doces. Obviamente ele poderia fazer melhor se o caminho fosse
+escolhido com mais sabedoria.
+
+Sua tarefa é escolher o melhor caminho para o Coelho ao longo da cadeia de ilhas -
+ou seja, maximizar a quantidade de doces coletados. Observe que Rabbit começa na
+1ª ilha e termina na Nth ou (N-1)th onde N é o número total de ilhas (porque dessas
+duas ele necessariamente pulará imediatamente para a outra margem).
+
+Os dados de entrada conterão o número de casos de teste na primeira linha.
+As próximas linhas contêm um caso de teste cada - ou seja, uma cadeia de ilhas,
+descritas pela matriz de números - quantidades de doces em cada ilha.
+A resposta deve conter a quantidade máxima possível de doces coletados para cada caso de teste.
