@@ -1,23 +1,17 @@
-from csv import reader
+ARR_STR1 = ["1 2",
+            "1 2 3",
+            "2 3 4",
+            "2 4 6 8 10",
+            "7 11 19"]
 
 
-def stringToInteger():
-    """
-    This function open a .csv file and return a list
-    of integer.
-    :return:
-    """
-    l2, l3 = [], []
-    arq = open("problem094.csv")
-    l1 = reader(arq, delimiter=" ")
-    l1 = list(l1)
-    for i in range(0, len(l1)):
-        for k in range(0, len(l1[i])):
-            l1[i][k] = int(l1[i][k])
-            l2.append(l1[i][k])
-        l3.append(l2)
-        l2 = []
-    return print(l3)
+def fool_day(strs):
+    total = 0
+    for i in strs:
+        total += i * i
+    return(total)
 
 
-stringToInteger()
+for lst in ARR_STR1:
+    num = list(map(int, lst.split()))
+    print(fool_day(num), end=" ")

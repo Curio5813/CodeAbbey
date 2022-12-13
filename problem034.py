@@ -31,16 +31,20 @@ def binarySearch(l1):
     :return:
     """
     print(l1)
-    inf, sup, sx = 0, 100, 0
-    for i in range(0, 100 + 1):
-        while inf <= sup:
-            h = (inf + sup) / 2
-            if l1[0] * h + l1[1] * sqrt(h ** 3) - l1[2] ** exp(-i / 50) - l1[3] == 0:
-                return print(h)
-            if l1[0] * h + l1[1] * sqrt(h ** 3) - l1[2] ** exp(-i / 50) - l1[3] > 0:
-                sup = h - 1
-            else:
-                inf = h + 1
+    li, ls, x = 0, 100, 50
+    equation = l1[0] * x + l1[1] * sqrt(x ** 3) - l1[2] ** exp(-x / 50) - l1[3]
+    print(equation)
+    while equation != 0.000000:
+        if equation < 0:
+            li = x
+            x = (ls + x) / 2
+        elif equation > 0:
+            ls = x
+            x = (li + x) / 2
+        equation = l1[0] * x + l1[1] * sqrt(x ** 3) - l1[2] ** exp(-x / 50) - l1[3]
+        print(equation)
+        print(x)
+    print(x)
 
 
 binarySearch(stringToFloat())
