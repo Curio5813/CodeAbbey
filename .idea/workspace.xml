@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7b8b4b1e-4d2f-4228-a5ee-f5063941168f" name="Changes" comment="Renomeando o arquivo problem019_02.py para problem019.py e deletando o arquivo de mesmo nome.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem019.csv" beforeDir="false" afterPath="$PROJECT_DIR$/problem019.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/problem019.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem019.py" afterDir="false" />
-    </list>
+    <list default="true" id="7b8b4b1e-4d2f-4228-a5ee-f5063941168f" name="Changes" comment="Refatorando o arquivo problem019.py" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -363,7 +359,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671241584511</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Refatorando o arquivo problem019.py">
+      <created>1671303982937</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1671303982937</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -382,7 +385,8 @@
     <MESSAGE value="Updating and Refactoring files" />
     <MESSAGE value="Refatorando o arquivo problem019_02.py." />
     <MESSAGE value="Renomeando o arquivo problem019_02.py para problem019.py e deletando o arquivo de mesmo nome." />
-    <option name="LAST_COMMIT_MESSAGE" value="Renomeando o arquivo problem019_02.py para problem019.py e deletando o arquivo de mesmo nome." />
+    <MESSAGE value="Refatorando o arquivo problem019.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refatorando o arquivo problem019.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
