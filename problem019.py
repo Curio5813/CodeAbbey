@@ -9,55 +9,38 @@ def justBrackets():
     arq = open("problem019.csv")
     l1 = reader(arq)
     l1 = list(l1)
-    l2, l3 = "", []
+    l2 = []
     for i in range(0, len(l1)):
         for k in range(0, len(l1[i])):
-            for m in range(0, len(l1[i][k])):
-                if l1[i][k][m] in "()[]{}<>":
-                    l2 += l1[i][k][m]
-        l3.append(l2)
-        l2 = ""
-    return l3
+            l2.append(l1[i][k])
+    return l2
 
 
-def matchingBrackets(l3):
+def matchingBrackets(l2):
     """
     This function take a parameter given by the function above and
     return the number "1" if brackets matching or "0" otherwise.
-    :param l3:
+    :param l2:
     :return:
     """
-    stack = []
-    for i in range(0, len(l3)):
-        if i in ["(", "{", "[", "<"]:
-            # Put the elements in the stack
-            stack.append(i)
-        else:
-            # If current character is not opening
-            # bracket, then it must be closing.
-            # So stack cannot be empty at this point.
-            if not stack:
-                return False
-            current_i = stack.pop()
-            if current_i == '(':
-                if i != ")":
-                    return True
-            if current_i == '{':
-                if i != "}":
-                    return True
-            if current_i == '[':
-                if i != "]":
-                    return True
-    # Check Empty Stack
-    if stack:
-        return print(0)
-    return print(1)
-
-
-if matchingBrackets(justBrackets()) is True:
-    print(1)
-elif matchingBrackets(justBrackets()) is False:
-    print(0)
+    l3 = []
+    for k in range(0, len(l2)):
+        expressao = l2[k]
+        for i in range(len(expressao)):
+            ch = expressao[i]
+            if ch == '{' or ch == '[' or ch == '(' or ch == '<':
+                l3.append(ch)
+            elif ch == '}' or ch == ']' or ch == ')' or ch == '>':
+                if len(l3) != 0:
+                    chx = str(l3.pop())
+                    if (ch == '}' and chx != '{') or (ch == ']' and chx != '[') or (ch == ')' and chx != '(') or \
+                            (ch == '>' and chx != '<'):
+                        break
+        if len(l3) != 0:
+            print(0, end=" ")
+        elif len(l3) == 0:
+            print(1, end=" ")
+        l3 = []
 
 
 matchingBrackets(justBrackets())
