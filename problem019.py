@@ -27,7 +27,6 @@ def matchingBrackets(l3):
     :param l3:
     :return:
     """
-    print(l3)
     stack = []
     for i in range(0, len(l3)):
         if i in ["(", "{", "[", "<"]:
@@ -42,22 +41,23 @@ def matchingBrackets(l3):
             current_i = stack.pop()
             if current_i == '(':
                 if i != ")":
-                    return False
+                    return True
             if current_i == '{':
                 if i != "}":
-                    return False
+                    return True
             if current_i == '[':
                 if i != "]":
-                    return False
+                    return True
     # Check Empty Stack
     if stack:
-        return False
-    return True
+        return print(0)
+    return print(1)
 
 
 if matchingBrackets(justBrackets()) is True:
     print(1)
-else:
+elif matchingBrackets(justBrackets()) is False:
     print(0)
+
 
 matchingBrackets(justBrackets())
