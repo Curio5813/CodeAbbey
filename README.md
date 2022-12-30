@@ -1,63 +1,21 @@
-# Code 
-> Um resumo curto sobre o que o seu projeto faz
+# Code Abbey
 
-Um ou dois parágrafos sobre seu projeto e
-o que ele faz.
+> Collection of programming problems to practice solving, learn to program and code, and win certificates.
+
+This project is dedicated to learning programming and logic algorithms by solving computing problems available on the website https://www.codeabbey.com
 
 ![](codeabbey.gif)
 
-## Instalação
 
-Mac OS X & Linux:
+## How to use this repository
 
-```sh
-npm install --save
-```
-
-Windows:
-
-```sh
-edit autoexec.bat
-```
-
-## Exemplo de uso
-
-Alguns exemplos que motivariam as pessoas a
-utilizarem seu projeto ou que demonstrasse
-que este é últil para alguma coisa. Divida 
-esta parte em partes menores e se possível 
-coloque algum código ou prints de telas.
-
-## Ambiente de Desenvolvimento
-
-Descrever como instalar e preparar qualquer
-dependência de desenvolvimento para que
-seu projeto possa ser executado localmente
-e pessoas possam contribuir com o mesmo.
-Se possível forneça as informações para
-diferentes plataformas, exemplo Windows,
-Linux e Mac OS.
-
-## Histórico de Atualizações
-
-* 0.2.1
-    * CHANGE: Atualização dos docs (o código não foi alterado)
-* 0.2.0
-    * CHANGE: Removida a função `setPadrãoXYZ()`
-    * ADD: Adicionado a função `inicializar()`
-* 0.1.1
-    * FIX: Crash quando executava `escrever()` (Obrigado ao @Contribuidor)
-* 0.1.0
-    * O primeiro lançamento estável
-    * CHANGE: Renomeado de `Projeto XYZ` para `Projeto ABC`
-* 0.0.1
-    * Projeto inicial
-
+Problems solved from the Code Abbey website should not be copied, but rather serve as a guide for algorithms created to solve the proposed problems.
 
 ## Meta
 
-Seu nome - [@SeuTwitter](https://twitter.com/seuTwitter) - seuemail@gmail.com
+Marcos Glasner - [https://github.com/Curio5813/CodeAbbey](https://github.com/Curio5813)
 
-Distribuído sobre a licença. Veja `LICENÇA` para mais informações.
+marcosglasner@gmail.com
 
-[https://github.com/seuusuaurio/seuprojeto](https://github.com/seusuario)
+
+
