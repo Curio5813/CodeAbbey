@@ -1,10 +1,10 @@
-# Nome do seu projeto
+# Code 
 > Um resumo curto sobre o que o seu projeto faz
 
 Um ou dois parágrafos sobre seu projeto e
 o que ele faz.
 
-![](codeabbey.git)
+![](codeabbey.gif)
 
 ## Instalação
 
