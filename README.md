@@ -9,7 +9,7 @@ This project is dedicated to learning programming and logic algorithms by solvin
 
 ## How to use this repository
 
-Problems solved from the Code Abbey website should not be copied, but rather serve as a guide for algorithms created to solve the proposed problems.
+Solved problems from the Code Abbey website and posted here should not be copied, but rather serve as a guide in the construction of algorithms to solve the proposed problems.
 
 ## Meta
 
