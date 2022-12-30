@@ -4,7 +4,7 @@
 Um ou dois parágrafos sobre seu projeto e
 o que ele faz.
 
-![](screenshot0001.png)
+![](codeabbey.git)
 
 ## Instalação
 
