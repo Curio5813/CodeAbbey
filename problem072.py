@@ -53,13 +53,11 @@ def funnyWordsGenerator(l4, l3):
     word, idx1, idx2, n, l5 = "", 0, 0, 0, []
     for i in range(0, len(l4), n):
         if i >= len(l4) - 1:
-            break
-        if l3[1][n] % 2 == 0:
-            n = 2
-            idx1 = l4[i] % 19
-            word += con[idx1]
-            idx2 = l4[i + 1] % 5
-            word += vow[idx2]
+            break   
+        idx1 = l4[i] % 19
+        word += con[idx1]
+        idx2 = l4[i + 1] % 5
+        word += vow[idx2]
     return print(word)
 
 
