@@ -19,7 +19,7 @@ def stringToInteger():
     return l3
 
 
-def linearCongruentialGenerator(l3):
+def lCG(l3):
     """
     This function generate a pseudo-random number by obey
     the follow rule:
@@ -48,10 +48,9 @@ def funnyWordsGenerator(l4, l3):
     :return:
     """
     print(l3)
-    print(l4)
     con = "bcdfghjklmnprstvwxz"
     vow = "aeiou"
-    word, idx1, idx2, k, n, = "", 0, 0, 0, 0
+    word, idx1, idx2, n, l5 = "", 0, 0, 0, []
     for i in range(0, len(l4), 2):
         if i >= len(l4) - 1:
             break
@@ -59,8 +58,7 @@ def funnyWordsGenerator(l4, l3):
         word += con[idx1]
         idx2 = l4[i + 1] % 5
         word += vow[idx2]
-        k += 2
     return print(word)
 
 
-funnyWordsGenerator(linearCongruentialGenerator(stringToInteger()), (stringToInteger()))
+funnyWordsGenerator(lCG(stringToInteger()), (stringToInteger()))
