@@ -50,6 +50,8 @@ def funnyWordsGenerator(l5, l3):
     """
     This function take the parameters give by the functions above
     and return the words you generated separated by space.
+    :param l5:
+    :param l3:
     :return:
     """
     con = "bcdfghjklmnprstvwxz"
