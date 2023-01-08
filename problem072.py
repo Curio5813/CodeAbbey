@@ -30,35 +30,42 @@ def lCG(l3):
     :param l3:
     :return:
     """
-    a, c, m, xc, l4 = 445, 700001, 2097152, l3[0][1], []
-    loops = sum(l3[1])
-    for i in range(loops):
-        # This is the formula of Linear Congruential Generator
-        nex = (a * xc + c) % m
-        # This updating the value of nex
-        xc = nex
-        l4.append(nex)
-    return l4
+    a, c, m, xc, n, cont, l4, l5 = 445, 700001, 2097152, l3[0][1], 0, 0, [], []
+    for i in range(l3[0][0]):
+        while cont < l3[1][n]:
+            # This is the formula of Linear Congruential Generator
+            nex = (a * xc + c) % m
+            # This updating the value of nex
+            xc = nex
+            l4.append(nex)
+            cont += 1
+        l5.append(l4)
+        l4 = []
+        cont = 0
+        n += 1
+    return l5
 
 
-def funnyWordsGenerator(l4, l3):
+def funnyWordsGenerator(l5, l3):
     """
     This function take the parameters give by the functions above
     and return the words you generated separated by space.
     :return:
     """
-    print(l3)
     con = "bcdfghjklmnprstvwxz"
     vow = "aeiou"
-    word, idx1, idx2, n, l5 = "", 0, 0, 0, []
-    for i in range(0, len(l4), n):
-        if i >= len(l4) - 1:
-            break   
-        idx1 = l4[i] % 19
-        word += con[idx1]
-        idx2 = l4[i + 1] % 5
-        word += vow[idx2]
-    return print(word)
+    word, idx1, idx2, k, l6 = "", 0, 0, 0, []
+    for i in range(l3[0][0]):
+        for k in range(0, len(l5[i]), 2):
+            idx1 = l5[i][k] % 19
+            word += con[idx1]
+            if k >= len(l5[i]) - 1:
+                break
+            idx2 = l5[i][k + 1] % 5
+            word += vow[idx2]
+        l6.append(word)
+        word = ""
+    return print(*l6)
 
 
-funnyWordsGenerator(lCG(stringToInteger()), (stringToInteger()))
+funnyWordsGenerator(lCG(stringToInteger()), stringToInteger())
