@@ -18,3 +18,5 @@ def sumInLoop():
 
 
 sumInLoop()
+print("")
+print("It's all folks!")
