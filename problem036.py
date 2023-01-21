@@ -29,13 +29,17 @@ def codeGuesser(l3):
     :return:
     """
     idx0_0, idx1_0, idx2_0 = [], [], []
-    lst0, lst1, lst2 = [], [], []
     for i in range(0, len(l3)):
         for k in range(0, len(l3[i])):
             if l3[i][-1] == 0:
                 idx0_0.append(l3[i][0])
-                idx1_0.append(l3[i][0])
-                idx2_0.append(l3[i][0])
+                idx1_0.append(l3[i][1])
+                idx2_0.append(l3[i][2])
+                break
+
+    print(idx0_0)
+    print(idx1_0)
+    print(idx2_0)
 
 
 codeGuesser(stringToInteger())
