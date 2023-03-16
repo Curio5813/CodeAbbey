@@ -48,7 +48,6 @@ def codeGuesser(l3):
                 idx1_2.append(l3[i][1])
                 idx2_2.append(l3[i][2])
                 break
-
     print(idx0_0)
     print(idx1_0)
     print(idx2_0)
