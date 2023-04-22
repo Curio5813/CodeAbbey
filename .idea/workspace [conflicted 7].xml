@@ -5,7 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7b8b4b1e-4d2f-4228-a5ee-f5063941168f" name="Changes" comment="Refatorando o arquivo problem019.py">
-      <change beforePath="$PROJECT_DIR$/problem036.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem036.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CodeAbbey [conflicted 2].iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CodeAbbey [conflicted].iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CodeAbbey.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor [conflicted].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc [conflicted 2].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc [conflicted].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs [conflicted].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace [conflicted 2].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace [conflicted 3].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace [conflicted 4].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace [conflicted 5].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace [conflicted 6].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace [conflicted].xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem022 [conflicted].csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem022 [conflicted].py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +48,12 @@
       </list>
     </option>
     <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -44,7 +72,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "ToolWindowPython Console.ShowToolbar": "false",
-    "last_opened_file_path": "/home/marcos/Coding/Python/CodeAbbey",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/home/marcos/Computacao/Python/ProjectEuler",
     "settings.editor.selected.configurable": "vcs.Git"
   },
   "keyToStringList": {
@@ -55,7 +84,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Python.problem036">
+  <component name="RunManager" selected="Python.problem004">
     <configuration name="problem002" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -69,6 +98,27 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem002.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="problem004" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="CodeAbbey" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem004.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -140,27 +190,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="problem034" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="CodeAbbey" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/problem034.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="problem036" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="CodeAbbey" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -184,11 +213,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.problem004" />
         <item itemvalue="Python.problem036" />
         <item itemvalue="Python.problem002" />
         <item itemvalue="Python.problem019" />
         <item itemvalue="Python.problem019_02" />
-        <item itemvalue="Python.problem034" />
       </list>
     </recent_temporary>
   </component>
