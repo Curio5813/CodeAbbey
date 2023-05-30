@@ -1,4 +1,5 @@
 from csv import reader
+import cython
 
 
 def sumsInLoop():
@@ -7,6 +8,8 @@ def sumsInLoop():
     given list.
     :return:
     """
+    a = 1
+    cython.int = a
     arq = open("problem003.csv")
     lp = reader(arq, delimiter=" ")
     lp = list(lp)
