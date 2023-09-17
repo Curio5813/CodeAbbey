@@ -25,14 +25,22 @@ def twoPrinters(l1):
     :return: 
     """
     print(l1)
-    cont, l2, soma = 0, [], 0
     for i in range(0, len(l1)):
-        for k in range(0, len(l1[i])):
-            t1 = l1[i][2] / l1[i][0]
-            t2 = l1[i][2] / l1[i][1]
-            total = t1 - t2
-        l2.append(total)
-    return print(*l2)
+        cont, soma, n1, n2 = 0, 0, 1, 1
+        while soma < l1[i][2]:
+            cont += 1
+            if cont == l1[i][0] * n1:
+                soma += 1
+                n1 += 1
+                if soma == l1[i][2]:
+                    print(cont)
+                    break
+            if cont == l1[i][1] * n2:
+                soma += 1
+                n2 += 1
+                if soma == l1[i][2]:
+                    print(cont)
+                    break
 
 
 twoPrinters(stringToInteger())

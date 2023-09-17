@@ -17,7 +17,28 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/problem007.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/problem008.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/problem012.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/problem022.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
@@ -32,6 +53,13 @@
           </value>
         </entry>
         <entry key="/problem036.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="/problem297.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
