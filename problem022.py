@@ -1,4 +1,8 @@
 from csv import reader
+from time import time
+
+
+start = time()
 
 
 def stringToInteger():
@@ -24,7 +28,6 @@ def twoPrinters(l1):
     :param l1:
     :return: 
     """
-    print(l1)
     for i in range(0, len(l1)):
         cont, soma, n1, n2 = 0, 0, 1, 1
         while soma < l1[i][2]:
@@ -33,14 +36,16 @@ def twoPrinters(l1):
                 soma += 1
                 n1 += 1
                 if soma == l1[i][2]:
-                    print(cont)
+                    print(f"{cont}", end=" ")
                     break
             if cont == l1[i][1] * n2:
                 soma += 1
                 n2 += 1
                 if soma == l1[i][2]:
-                    print(cont)
+                    print(f"{cont}", end=" ")
                     break
 
 
 twoPrinters(stringToInteger())
+end = time()
+print(f"{(end - start):.3f}")
