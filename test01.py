@@ -1,8 +1,5 @@
-num = 27.5
-a = int(num)
-b = round(num)
-
+a = int("11111111111111111111111111111111", 2)
 print(a)
-print(b)
 
-
+a = "-0b111011"
+print(a[3::])
