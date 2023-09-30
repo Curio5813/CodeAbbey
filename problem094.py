@@ -1,17 +1,25 @@
-ARR_STR1 = ["1 2",
-            "1 2 3",
-            "2 3 4",
-            "2 4 6 8 10",
-            "7 11 19"]
+from csv import reader
 
 
-def fool_day(strs):
-    total = 0
-    for i in strs:
-        total += i * i
-    return(total)
+def fool_day_2014():
+    """
+    This function calculate a sequence of numbers that
+    form a patterns.
+    :return:
+    """
+    arq = open("problem094.csv")
+    l1 = reader(arq, delimiter=" ")
+    l1 = list(l1)
+    l2, soma = [], 0
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            l1[i][k] = int(l1[i][k])
+    for i in range(0, len(l1)):
+        for k in range(0, len(l1[i])):
+            soma += l1[i][k] * l1[i][k]
+        l2.append(soma)
+        soma = 0
+    print(*l2)
 
 
-for lst in ARR_STR1:
-    num = list(map(int, lst.split()))
-    print(fool_day(num), end=" ")
+fool_day_2014()
