@@ -34,8 +34,8 @@ def bit_count():
             l2[i] = l2[i][::-1]
             invertido.append(l2[i])
     # This snippet of the code use the complement of 2 to
-    # to convert binary numbers with signal in negative in
-    # negative binary numbers.
+    # to convert binary numbers with signal in negative
+    # binary numbers.
     for i in range(0, len(negativo)):
         for k in range(0, len(negativo[i])):
             while invertido[i][k] != "1":
