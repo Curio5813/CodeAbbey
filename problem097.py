@@ -13,7 +13,7 @@ def girls_and_pigs():
     Answer should give the amount of solutions for each case.
     :return:
     """
-    diff, woman_l, woman_b, n, pigs, pigs_l, pigs_b, solution, solutions = 2, 0, 0, 0, 0, 0, 0, 0, []
+    diff, woman_l, woman_b, n, pigs, solution, solutions = 2, 0, 0, 0, 0, 0, []
     # This snippet of the code open a .csv file and put it into a list with the
     # datas to be process by the program.
     arq = open("problem097.csv")
