@@ -79,7 +79,7 @@ def king_and_queen():
             respostas.append(resposta)
         else:
             for m in range(0, len(diagonais_acima_p)):
-                if dados[i][0] in diagonais_abaixo_p[m] and dados[i][1] in diagonais_acima_p[m]:
+                if dados[i][0] in diagonais_acima_p[m] and dados[i][1] in diagonais_acima_p[m]:
                     resposta = "Y"
                     respostas.append(resposta)
                     break
@@ -91,7 +91,7 @@ def king_and_queen():
                     resposta = "Y"
                     respostas.append(resposta)
                     break
-                elif dados[i][0] in diagonais_abaixo_sec and dados[i][1] in diagonais_abaixo_sec[m]:
+                elif dados[i][0] in diagonais_abaixo_sec[m] and dados[i][1] in diagonais_abaixo_sec[m]:
                     resposta = "Y"
                     respostas.append(resposta)
                     break
