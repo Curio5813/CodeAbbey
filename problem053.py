@@ -32,15 +32,14 @@ def king_and_queen():
     dados = list(dados)
     linhas = ['8', '7', '6', '5', '4', '3', '2', '1']
     colunas = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']
-    pos, aux, positions, resposta, respostas, bol, cont1, cont2 = "", [], [], "", [], 0, 0, 0
+    pos, positions, resposta, respostas = [], [], "", []
     diagonais_acima_p, diagonais_abaixo_p, aux_acima_p, aux_abaixo_p = [], [], [], []
     diagonais_acima_sec, diagonais_abaixo_sec, aux_acima_sec, aux_abaixo_sec = [], [], [], []
     for i in range(0, len(linhas)):
         for k in range(0, len(colunas)):
-            pos = colunas[k] + linhas[i]
-            aux.append(pos)
-        positions.append(aux)
-        aux = []
+            pos.append(colunas[k] + linhas[i])
+        positions.append(pos)
+        pos = []
     matriz = np.array(positions)
     diagonal_principal = [*matriz.diagonal(offset=0)]
     diagonais_acima = [matriz.diagonal(offset=i) for i in range(1, matriz.shape[0])]
