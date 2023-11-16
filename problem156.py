@@ -45,7 +45,6 @@ def luhn_algorithm():
     arq = open("problem156.csv")
     dados = reader(arq)
     dados = list(dados)
-    print(dados)
     return dados
 
 
@@ -66,7 +65,6 @@ def processing_1(dados):
                     aux.append(int(dados[i][k][j]))
             treat.append(aux)
             aux = []
-    print(treat)
     return treat
 
 
@@ -87,7 +85,6 @@ def processing_2(dados):
                     aux.append(int(dados[i][k][j]))
             treat.append(aux)
             aux = []
-    print(idx_main)
     return idx_main
 
 
@@ -116,7 +113,6 @@ def processing_4(treat):
         treat[i].reverse()
         if 10 in treat[i]:
             algol2.append(treat[i])
-    print(algol2)
     return algol2
 
 
@@ -136,7 +132,6 @@ def analise_1_1(algol1):
                 aux = []
         analise1.append(algols)
         algols = []
-    print(analise1)
     return analise1
 
 
@@ -148,9 +143,12 @@ def analise_1_2(analise1):
     """
 
 
-def analise_2_1(algol2):
+def analise_2(dados, idx_main, algol2):
     """
-    First analise from missed numbers.
+    This fuction calculate the missed numbers and put it in the correct place
+    in the numbers cards.
+    :param dados:
+    :param idx_main:
     :param algol2:
     :return:
     """
@@ -164,16 +162,6 @@ def analise_2_1(algol2):
                 aux = []
         analise2.append(algols)
         algols = []
-    print(analise2)
-    return analise2
-
-
-def analise_2_2(analise2):
-    """
-    This function putting zeros where there is a number missed.
-    :param analise2:
-    :return:
-    """
     idx1 = []
     for i in range(0, len(analise2)):
         for k in range(0, len(analise2[i])):
@@ -183,16 +171,6 @@ def analise_2_2(analise2):
                     idx1.append(j)
                     break
     print(idx1)
-    return idx1
-
-
-def analise_2_3(analise2):
-    """
-    This function count the sum for each card numbers where misses numbers
-    are zeros.
-    :param analise2:
-    :return:
-    """
     soma, somas1 = 0, []
     for i in range(0, len(analise2)):
         for k in range(0, len(analise2[i])):
@@ -211,17 +189,6 @@ def analise_2_3(analise2):
         somas1.append(soma)
         soma = 0
     print(somas1)
-    return somas1
-
-
-def analise_2_4(idx1, somas1):
-    """
-    This function analise about missed number by taking the sum of numbers and
-    finding the missed numbers who the sum is multiple of 10.
-    :param idx1:
-    :param somas1:
-    :return:
-    """
     numbers = []
     for i in range(0, len(somas1)):
         if idx1[i] % 2 == 0:
@@ -240,18 +207,6 @@ def analise_2_4(idx1, somas1):
                         numbers.append(j)
                         break
     print(numbers)
-    return numbers
-
-
-def analise_2_5(dados, idx_main, algol2, numbers):
-    """
-    This function putting the fixed missed numbers card into the data.
-    :param dados:
-    :param idx_main:
-    :param algol2:
-    :param numbers:
-    :return:
-    """
     aux_str, str_algol = "", []
     for i in range(0, len(algol2)):
         for k in range(0, len(algol2[i])):
@@ -282,9 +237,5 @@ def fixed_numbers(dados):
             print(dados[i][k], end=" ")
 
 
-fixed_numbers(analise_2_5(luhn_algorithm(), processing_2(luhn_algorithm()),
-                          processing_4(processing_1(luhn_algorithm())),
-                          analise_2_4(analise_2_2(analise_2_1(processing_4
-                                                              (processing_1(luhn_algorithm())))),
-                                      analise_2_3(analise_2_1(processing_4
-                                                              (processing_1(luhn_algorithm())))))))
+fixed_numbers(analise_2(luhn_algorithm(), processing_2(luhn_algorithm()),
+                        processing_4(processing_1(luhn_algorithm()))))
