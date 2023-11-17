@@ -33,12 +33,14 @@ def luhn_algorithm():
     doesn't store any business information but instead is chosen so that the whole
     number gives a proper checksum.
 
-    All the card numbers would be 16 digits long (this is the most common length even in fairytales.
+    All the card numbers would be 16 digits long (this is the most common length even
+    in fairytales.
 
     Input data contain a list of workers who have their card numbers incorrect.
-    Next lines contain a single card number each. If the number contains "?" (question mark) instead
-    of some digit - this digit should be restored. If all digits are present, then "swap-error" should
-    be fixed.
+    Next lines contain a single card number each. If the number contains "?" (question mark)
+    instead
+    of some digit - this digit should be restored. If all digits are present, then "swap-error"
+    should be fixed.
     Answer should contain a list of "fixed" card numbers.
     :return:
     """
@@ -54,13 +56,12 @@ def processing_1(dados):
     :param dados:
     :return:
     """
-    aux, treat, idx_main = [], [], []
+    aux, treat = [], []
     for i in range(0, len(dados)):
         for k in range(0, len(dados[i])):
             for j in range(0, len(dados[i][k])):
                 if dados[i][k][j] == '?':
                     aux.append(10)
-                    idx_main.append(i)
                 else:
                     aux.append(int(dados[i][k][j]))
             treat.append(aux)
@@ -68,24 +69,34 @@ def processing_1(dados):
     return treat
 
 
-def processing_2(dados):
+def processing_2_1(dados):
     """
-    Second processing input data.
+    Second processing input data. Find the index wich the numbers is missed.
     :param dados:
     :return:
     """
-    aux, treat, idx_main = [], [], []
+    idx_swap = []
+    for i in range(0, len(dados)):
+        for k in range(0, len(dados[i])):
+            if '?' not in dados[i][k]:
+                idx_swap.append(i)
+    print(idx_swap)
+    return idx_swap
+
+
+def processing_2_2(dados):
+    """
+    Second processing input data. Find the index wich the numbers is missed.
+    :param dados:
+    :return:
+    """
+    idx_missed = []
     for i in range(0, len(dados)):
         for k in range(0, len(dados[i])):
             for j in range(0, len(dados[i][k])):
                 if dados[i][k][j] == '?':
-                    aux.append(10)
-                    idx_main.append(i)
-                else:
-                    aux.append(int(dados[i][k][j]))
-            treat.append(aux)
-            aux = []
-    return idx_main
+                    idx_missed.append(i)
+    return idx_missed
 
 
 def processing_3(treat):
@@ -135,24 +146,111 @@ def analise_1_1(algol1):
     return analise1
 
 
-def analise_1_2(analise1):
+def analise_1_2(analise1, algol1):
     """
-    Working...
+    This function find the numbers swapped.
     :param analise1:
+    :param algol1:
     :return:
     """
+    print(analise1)
+    print(len(analise1))
+    k, r, s, t, u, m, n, soma, aux, numbers1, aux_idx, idx1 = 0, 0, 0, 0, 0, 0, 0, 0, [], [], [], []
+    for i in range(0, len(analise1)):
+        k = 0
+        while k <= 3:
+            r, s, t, u = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
+            if k == 0:
+                r, s = s, r
+                if r * 2 >= 10:
+                    m = r * 2 - 9
+                else:
+                    m = r * 2
+                if u * 2 >= 10:
+                    n = u * 2 - 9
+                else:
+                    n = u * 2
+                soma = s + m + t + n
+                somas = soma + sum(algol1[i]) - sum(analise1[i][k])  # Somas erradas!
+                # Tenho que seguir a regra do algoritmo, as somas estão erradas.
+                if somas % 10 == 0:
+                    aux.append(r)
+                    aux.append(s)
+                    aux.append(t)
+                    aux.append(u)
+                    numbers1.append(aux)
+                    aux_idx.append(i)
+                    aux_idx.append(k)
+                    idx1.append(aux_idx)
+                    aux_idx = []
+                    aux = []
+                    break
+            elif k == 1:
+                s, t = t, s
+                if t * 2 >= 10:
+                    m = t * 2 - 9
+                else:
+                    m = t * 2
+                if u * 2 >= 10:
+                    n = u * 2 - 9
+                else:
+                    n = u * 2
+                soma = r + m + s + n
+                somas = soma + sum(algol1[i]) - sum(analise1[i][k])
+                if somas % 10 == 0:
+                    aux.append(r)
+                    aux.append(s)
+                    aux.append(t)
+                    aux.append(u)
+                    numbers1.append(aux)
+                    aux_idx.append(i)
+                    aux_idx.append(k)
+                    idx1.append(aux_idx)
+                    aux_idx = []
+                    aux = []
+                    break
+            elif k == 2:
+                t, u = u, t
+                if s * 2 >= 10:
+                    m = s * 2 - 9
+                else:
+                    m = s * 2
+                if t * 2 >= 10:
+                    n = t * 2 - 9
+                else:
+                    n = t * 2
+                soma = r + m + u + n
+                somas = soma + sum(algol1[i]) - sum(analise1[i][k])
+                if somas % 10 == 0:
+                    aux.append(r)
+                    aux.append(s)
+                    aux.append(t)
+                    aux.append(u)
+                    numbers1.append(aux)
+                    aux_idx.append(i)
+                    aux_idx.append(k)
+                    idx1.append(aux_idx)
+                    aux_idx = []
+                    aux = []
+                    break
+            k += 1
+    print(idx1)
+    print(numbers1)
+    print(len(numbers1))
+    return numbers1
 
 
-def analise_2(dados, idx_main, algol2):
+def analise_2(dados, idx_missed, algol2):
     """
     This fuction calculate the missed numbers and put it in the correct place
     in the numbers cards.
     :param dados:
-    :param idx_main:
+    :param idx_missed
     :param algol2:
     :return:
     """
-    aux, cont, algols, analise2 = [], 0, [], []
+    aux, cont, algols, analise2, idx1, soma, somas1, numbers2, aux_str,\
+        str_algol = [], 0, [], [], [], 0, [], [], "", []
     for i in range(0, len(algol2)):
         for k in range(0, len(algol2[i])):
             aux.append(algol2[i][k])
@@ -162,7 +260,6 @@ def analise_2(dados, idx_main, algol2):
                 aux = []
         analise2.append(algols)
         algols = []
-    idx1 = []
     for i in range(0, len(analise2)):
         for k in range(0, len(analise2[i])):
             for j in range(0, len(analise2[i][k])):
@@ -170,8 +267,6 @@ def analise_2(dados, idx_main, algol2):
                     analise2[i][k][j] = 0
                     idx1.append(j)
                     break
-    print(idx1)
-    soma, somas1 = 0, []
     for i in range(0, len(analise2)):
         for k in range(0, len(analise2[i])):
             if analise2[i][k][1] * 2 < 10 and analise2[i][k][3] * 2 < 10:
@@ -188,30 +283,26 @@ def analise_2(dados, idx_main, algol2):
                         analise2[i][k][3] * 2 - 9
         somas1.append(soma)
         soma = 0
-    print(somas1)
-    numbers = []
     for i in range(0, len(somas1)):
         if idx1[i] % 2 == 0:
             for j in range(0, 10):
                 if (somas1[i] + j) % 10 == 0:
-                    numbers.append(j)
+                    numbers2.append(j)
                     break
         elif idx1[i] % 2 != 0:
             for j in range(0, 10):
                 if (j * 2 + somas1[i]) % 10 == 0:
-                    numbers.append(j)
+                    numbers2.append(j)
                     break
                 if (j * 2) >= 10:
                     m = j * 2 - 9
                     if (m + somas1[i]) % 10 == 0:
-                        numbers.append(j)
+                        numbers2.append(j)
                         break
-    print(numbers)
-    aux_str, str_algol = "", []
     for i in range(0, len(algol2)):
         for k in range(0, len(algol2[i])):
             if algol2[i][k] == 10:
-                algol2[i][k] = numbers[i]
+                algol2[i][k] = numbers2[i]
     for i in range(0, len(algol2)):
         algol2[i].reverse()
     for i in range(0, len(algol2)):
@@ -219,10 +310,10 @@ def analise_2(dados, idx_main, algol2):
             aux_str += str(algol2[i][k])
         str_algol.append(aux_str)
         aux_str = ""
-    for i in range(0, len(idx_main)):
+    for i in range(0, len(idx_missed)):
         for k in range(0, len(dados)):
             for j in range(0, len(dados[k])):
-                if k == idx_main[i]:
+                if k == idx_missed[i]:
                     dados[k][j] = str_algol[i]
     return dados
 
@@ -237,5 +328,8 @@ def fixed_numbers(dados):
             print(dados[i][k], end=" ")
 
 
-fixed_numbers(analise_2(luhn_algorithm(), processing_2(luhn_algorithm()),
+processing_2_1(luhn_algorithm())
+analise_1_2(analise_1_1(processing_3(processing_1(luhn_algorithm()))),
+            processing_3(processing_1(luhn_algorithm())))
+fixed_numbers(analise_2(luhn_algorithm(), processing_2_2(luhn_algorithm()),
                         processing_4(processing_1(luhn_algorithm()))))
