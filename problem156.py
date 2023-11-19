@@ -80,7 +80,6 @@ def processing_2_1(dados):
         for k in range(0, len(dados[i])):
             if '?' not in dados[i][k]:
                 idx_swap.append(i)
-    print(idx_swap)
     return idx_swap
 
 
@@ -146,95 +145,115 @@ def analise_1_1(algol1):
     return analise1
 
 
-def analise_1_2(analise1, algol1):
+def analise_1_2(analise1):
+    """
+    This function calculate each part of the sum in the set of numbers cards
+    using the algorithm.
+    :param analise1:
+    :return:
+    """
+    print(len(analise1))
+    print(analise1)
+    soma, somas, somas1 = 0, [], []
+    for i in range(0, len(analise1)):
+        analise1[i].reverse()
+        print(analise1[i], end=" ")
+        for k in range(0, len(analise1[i])):
+            a, b, c, d = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
+            b = b * 2
+            if b >= 10:
+                b -= 9
+            d = d * 2
+            if d >= 10:
+                d -= 9
+            soma = a + b + c + d
+            somas.append(soma)
+        somas1.append(somas)
+        somas = []
+    return somas1
+
+
+def analise_1_3(analise1, somas1):
     """
     This function find the numbers swapped.
     :param analise1:
-    :param algol1:
+    :param somas1
     :return:
     """
-    print(analise1)
-    print(len(analise1))
-    k, r, s, t, u, m, n, soma, aux, numbers1, aux_idx, idx1 = 0, 0, 0, 0, 0, 0, 0, 0, [], [], [], []
+    print("\n")
+    print(somas1)
+    print(len(somas1))
+    cont, k, r, s, t, u, m, n, soma, aux, numbers1, aux_idx, idx1 = 0, \
+        0, 0, 0, 0, 0, 0, 0, 0, [], [], [], []
     for i in range(0, len(analise1)):
-        k = 0
-        while k <= 3:
+        analise1[i].reverse()
+        for k in range(0, len(analise1[i])):
             r, s, t, u = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
-            if k == 0:
-                r, s = s, r
-                if r * 2 >= 10:
-                    m = r * 2 - 9
-                else:
-                    m = r * 2
-                if u * 2 >= 10:
-                    n = u * 2 - 9
-                else:
-                    n = u * 2
-                soma = s + m + t + n
-                somas = soma + sum(algol1[i]) - sum(analise1[i][k])  # Somas erradas!
-                # Tenho que seguir a regra do algoritmo, as somas estão erradas.
-                if somas % 10 == 0:
-                    aux.append(r)
-                    aux.append(s)
-                    aux.append(t)
-                    aux.append(u)
-                    numbers1.append(aux)
-                    aux_idx.append(i)
-                    aux_idx.append(k)
-                    idx1.append(aux_idx)
-                    aux_idx = []
-                    aux = []
-                    break
-            elif k == 1:
-                s, t = t, s
-                if t * 2 >= 10:
-                    m = t * 2 - 9
-                else:
-                    m = t * 2
-                if u * 2 >= 10:
-                    n = u * 2 - 9
-                else:
-                    n = u * 2
-                soma = r + m + s + n
-                somas = soma + sum(algol1[i]) - sum(analise1[i][k])
-                if somas % 10 == 0:
-                    aux.append(r)
-                    aux.append(s)
-                    aux.append(t)
-                    aux.append(u)
-                    numbers1.append(aux)
-                    aux_idx.append(i)
-                    aux_idx.append(k)
-                    idx1.append(aux_idx)
-                    aux_idx = []
-                    aux = []
-                    break
-            elif k == 2:
-                t, u = u, t
-                if s * 2 >= 10:
-                    m = s * 2 - 9
-                else:
-                    m = s * 2
-                if t * 2 >= 10:
-                    n = t * 2 - 9
-                else:
-                    n = t * 2
-                soma = r + m + u + n
-                somas = soma + sum(algol1[i]) - sum(analise1[i][k])
-                if somas % 10 == 0:
-                    aux.append(r)
-                    aux.append(s)
-                    aux.append(t)
-                    aux.append(u)
-                    numbers1.append(aux)
-                    aux_idx.append(i)
-                    aux_idx.append(k)
-                    idx1.append(aux_idx)
-                    aux_idx = []
-                    aux = []
-                    break
-            k += 1
-    print(idx1)
+            t, u = u, t
+            m = s * 2
+            if m >= 10:
+                m -= 9
+            n = u * 2
+            if n >= 10:
+                n -= 9
+            soma = r + m + t + n
+            somas = soma + sum(somas1[i]) - somas1[i][k]
+            if somas % 10 == 0:
+                aux.append(r)
+                aux.append(s)
+                aux.append(t)
+                aux.append(u)
+                numbers1.append(aux)
+                aux_idx.append(i)
+                aux_idx.append(k)
+                idx1.append(aux_idx)
+                aux = []
+                aux_idx = []
+                break
+            r, s, t, u = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
+            s, t = t, s
+            m = s * 2
+            if m >= 10:
+                m -= 9
+            n = u * 2
+            if n >= 10:
+                n -= 9
+            soma = r + m + t + n
+            somas = soma + sum(somas1[i]) - somas1[i][k]
+            if somas % 10 == 0:
+                aux.append(r)
+                aux.append(s)
+                aux.append(t)
+                aux.append(u)
+                numbers1.append(aux)
+                aux_idx.append(i)
+                aux_idx.append(k)
+                idx1.append(aux_idx)
+                aux = []
+                aux_idx = []
+                break
+            r, s, t, u = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
+            r, s = s, r
+            m = s * 2
+            if m >= 10:
+                m = m - 9
+            n = u * 2
+            if n >= 10:
+                n -= 9
+            soma = r + m + t + n
+            somas = soma + sum(somas1[i]) - somas1[i][k]
+            if somas % 10 == 0:
+                aux.append(r)
+                aux.append(s)
+                aux.append(t)
+                aux.append(u)
+                numbers1.append(aux)
+                aux_idx.append(i)
+                aux_idx.append(k)
+                idx1.append(aux_idx)
+                aux = []
+                aux_idx = []
+                break
     print(numbers1)
     print(len(numbers1))
     return numbers1
@@ -260,6 +279,8 @@ def analise_2(dados, idx_missed, algol2):
                 aux = []
         analise2.append(algols)
         algols = []
+    print(analise2)
+    print(len(analise2))
     for i in range(0, len(analise2)):
         for k in range(0, len(analise2[i])):
             for j in range(0, len(analise2[i][k])):
@@ -329,7 +350,7 @@ def fixed_numbers(dados):
 
 
 processing_2_1(luhn_algorithm())
-analise_1_2(analise_1_1(processing_3(processing_1(luhn_algorithm()))),
-            processing_3(processing_1(luhn_algorithm())))
+analise_1_3(analise_1_1(processing_3(processing_1(luhn_algorithm()))),
+            analise_1_2(analise_1_1(processing_3(processing_1(luhn_algorithm())))))
 fixed_numbers(analise_2(luhn_algorithm(), processing_2_2(luhn_algorithm()),
                         processing_4(processing_1(luhn_algorithm()))))
