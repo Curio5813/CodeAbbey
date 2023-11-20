@@ -152,12 +152,9 @@ def analise_1_2(analise1):
     :param analise1:
     :return:
     """
-    print(len(analise1))
-    print(analise1)
     soma, somas, somas1 = 0, [], []
     for i in range(0, len(analise1)):
         analise1[i].reverse()
-        print(analise1[i], end=" ")
         for k in range(0, len(analise1[i])):
             a, b, c, d = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
             b = b * 2
@@ -173,18 +170,17 @@ def analise_1_2(analise1):
     return somas1
 
 
-def analise_1_3(analise1, somas1):
+def analise_1_3(analise1, somas1, dados, idx_swap):
     """
     This function find the numbers swapped.
     :param analise1:
     :param somas1
+    :param dados:
+    :param idx_swap:
     :return:
     """
-    print("\n")
-    print(somas1)
-    print(len(somas1))
-    cont, k, r, s, t, u, m, n, soma, aux, numbers1, aux_idx, idx1 = 0, \
-        0, 0, 0, 0, 0, 0, 0, 0, [], [], [], []
+    cont, k, r, s, t, u, m, n, soma, aux, numbers1, aux_idx, idx1, str_num1, str_algol1, n2, dados1 = 0, \
+        0, 0, 0, 0, 0, 0, 0, 0, [], [], [], [], "", [], 0, []
     for i in range(0, len(analise1)):
         analise1[i].reverse()
         for k in range(0, len(analise1[i])):
@@ -254,21 +250,43 @@ def analise_1_3(analise1, somas1):
                 aux = []
                 aux_idx = []
                 break
-    print(numbers1)
-    print(len(numbers1))
-    return numbers1
+    for i in range(0, len(analise1)):
+        for k in range(0, len(analise1[i])):
+            analise1[i][k].reverse()
+            if k == idx1[i][1]:
+                numbers1[i].reverse()
+                while n2 <= 3:
+                    str_num1 += str(numbers1[i][n2])
+                    n2 += 1
+            else:
+                for j in range(0, len(analise1[i][k])):
+                    str_num1 += str(analise1[i][k][j])
+        str_algol1.append(str_num1)
+        str_num1 = ""
+        n2 = 0
+    print(str_algol1)
+    print(idx_swap)
+    for i in range(0, len(dados)):
+        for k in range(0, len(dados[i])):
+            dados1.append(*dados[i])
+    for i in range(0, len(idx_swap)):
+        for k in range(0, len(dados1)):
+            if k == idx_swap[i]:
+                dados1[k] = str_algol1[i]
+    print(dados1)
+    return dados1
 
 
-def analise_2(dados, idx_missed, algol2):
+def analise_2(dados1, idx_missed, algol2):
     """
     This fuction calculate the missed numbers and put it in the correct place
     in the numbers cards.
-    :param dados:
+    :param dados1:
     :param idx_missed
     :param algol2:
     :return:
     """
-    aux, cont, algols, analise2, idx1, soma, somas1, numbers2, aux_str,\
+    aux, cont, algols, analise2, idx1, soma, somas1, numbers2, aux_str, \
         str_algol = [], 0, [], [], [], 0, [], [], "", []
     for i in range(0, len(algol2)):
         for k in range(0, len(algol2[i])):
@@ -279,8 +297,6 @@ def analise_2(dados, idx_missed, algol2):
                 aux = []
         analise2.append(algols)
         algols = []
-    print(analise2)
-    print(len(analise2))
     for i in range(0, len(analise2)):
         for k in range(0, len(analise2[i])):
             for j in range(0, len(analise2[i][k])):
@@ -331,26 +347,47 @@ def analise_2(dados, idx_missed, algol2):
             aux_str += str(algol2[i][k])
         str_algol.append(aux_str)
         aux_str = ""
+    print(dados1)
     for i in range(0, len(idx_missed)):
-        for k in range(0, len(dados)):
-            for j in range(0, len(dados[k])):
-                if k == idx_missed[i]:
-                    dados[k][j] = str_algol[i]
-    return dados
+        for k in range(0, len(dados1)):
+            if k == idx_missed[i]:
+                dados1[k] = str_algol[i]
+    print(dados1)
+    print(idx_missed)
+    return dados1
 
 
-def fixed_numbers(dados):
+def fixed_numbers(dados1):
     """
     Output fixed numbers cards.
     :return:
     """
-    for i in range(0, len(dados)):
-        for k in range(0, len(dados[i])):
-            print(dados[i][k], end=" ")
+    print(len(dados1))
+    for i in range(0, len(dados1)):
+        print(dados1[i], end=" ")
 
 
-processing_2_1(luhn_algorithm())
-analise_1_3(analise_1_1(processing_3(processing_1(luhn_algorithm()))),
-            analise_1_2(analise_1_1(processing_3(processing_1(luhn_algorithm())))))
-fixed_numbers(analise_2(luhn_algorithm(), processing_2_2(luhn_algorithm()),
-                        processing_4(processing_1(luhn_algorithm()))))
+fixed_numbers(analise_2(analise_1_3(analise_1_1(processing_3(processing_1(luhn_algorithm()))),
+                                    analise_1_2(analise_1_1(processing_3(processing_1(luhn_algorithm())))),
+                                    luhn_algorithm(), processing_2_1(luhn_algorithm())),
+                        processing_2_2(luhn_algorithm()), processing_4(processing_1(luhn_algorithm()))))
+
+# The answer:
+# 4004281542393685 5225124120787557 8966112065777557 6507100126979650 4915857466600169 3416526581659550
+# 6849534092402080 7937384693079429 9623372575943783 2528207109206870 7362811688191631 6848840455739666
+# 9363285122146565 3886137515479221 1116607391275329 9496496174532707 7662796626816588 5340882900244483
+# 7879159276942387 2722912535424096 4220280321796793 2601447249629108 8300458452986300 3978159340530951
+# 3191572372177569 9243721260333876 6958252523183727 8406251216638884 3863344702818610 2998298421617986
+# 4904818038655100 7072874537963700 3929060205547272 9489786040986098 5256852105440188 3024807702129994
+# 4307966740003763 9535856210204152 5657427840224745 8312765829233646 4548407314855436 8299072763081520
+# 1961413508325461 2626888411128380 6493889882747733 5152977233508096
+
+# My answer:
+# 4004281542393685 5225124120787557 8966112065777557 6507100126979650 4915857466600169 3416526581659550
+# 6849534092402080 7937384693079429 9623372575934873 2528207109206870 7362811688191631 6848840455739666
+# 9362385122145665 3886137515479221 1116607391257392 9496496174532707 7662796626816588 5340882900244483
+# 7879159276942387 2722912535424096 4220280321796793 2601447249629108 8300458452986300 3978159340530951
+# 3191572372177569 9243721260333876 6958252523183727 8406251216638884 3863344702818610 2998298421617986
+# 4904818038655100 7072874537963700 3929060205547272 9489786040986098 5256852105440188 3024807702129994
+# 4307966740003763 9535856210204152 5657427840224745 8312765829233646 4548407134854536 8299072763081520
+# 1961413508325461 2626888114128380 6493889882747733 5152977233508096
