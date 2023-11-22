@@ -272,4 +272,3 @@ def fixed_numbers(dados1):
 fixed_numbers(analise_2(analise_1_2(analise_1_1(processing_3(processing_1(luhn_algorithm()))),
                                     luhn_algorithm(), processing_2_1(luhn_algorithm())),
                         processing_2_2(luhn_algorithm()), processing_4(processing_1(luhn_algorithm()))))
-
