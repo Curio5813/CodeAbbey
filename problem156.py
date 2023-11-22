@@ -100,13 +100,12 @@ def processing_2_2(dados):
 
 def processing_3(treat):
     """
-    Fourth processing treating data.
+    Third processing treating data.
     :param treat:
     :return:
     """
     aux, algol1 = [], []
     for i in range(0, len(treat)):
-        treat[i].reverse()
         if 10 not in treat[i]:
             algol1.append(treat[i])
     return algol1
@@ -132,140 +131,48 @@ def analise_1_1(algol1):
     :param algol1:
     :return:
     """
-    aux, analise1, cont, algols = [], [], 0, []
+    k, soma, somas, algol1_1, str_num, str_algol1,  = 0, 0, [], [], "", []
     for i in range(0, len(algol1)):
-        for k in range(0, len(algol1[i])):
-            aux.append(algol1[i][k])
-            cont += 1
-            if cont > 0 and cont % 4 == 0:
-                algols.append(aux)
-                aux = []
-        analise1.append(algols)
-        algols = []
-    return analise1
+        mix = algol1[i].copy()
+        while k < len(algol1[i]) - 1:
+            algol1[i] = mix.copy()
+            algol1[i][k], algol1[i][k + 1] = algol1[i][k + 1], algol1[i][k]
+            algol1[i].reverse()
+            for j in range(0, len(algol1[i]), 4):
+                a, b, c, d = algol1[i][j], algol1[i][j + 1], algol1[i][j + 2], algol1[i][j + 3]
+                m = b * 2
+                if m >= 10:
+                    m -= 9
+                n = d * 2
+                if n >= 10:
+                    n -= 9
+                soma = a + m + c + n
+                somas.append(soma)
+            if sum(somas) % 10 == 0:
+                algol1[i].reverse()
+                algol1_1.append(algol1[i])
+                k = 0
+                break
+            else:
+                somas = []
+            k += 1
+    for i in range(0, len(algol1_1)):
+        for k in range(0, len(algol1_1[i])):
+            str_num += str(algol1_1[i][k])
+        str_algol1.append(str_num)
+        str_num = ""
+    return str_algol1
 
 
-def analise_1_2(analise1):
-    """
-    This function calculate each part of the sum in the set of numbers cards
-    using the algorithm.
-    :param analise1:
-    :return:
-    """
-    soma, somas, somas1 = 0, [], []
-    for i in range(0, len(analise1)):
-        analise1[i].reverse()
-        for k in range(0, len(analise1[i])):
-            a, b, c, d = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
-            b = b * 2
-            if b >= 10:
-                b -= 9
-            d = d * 2
-            if d >= 10:
-                d -= 9
-            soma = a + b + c + d
-            somas.append(soma)
-        somas1.append(somas)
-        somas = []
-    return somas1
-
-
-def analise_1_3(analise1, somas1, dados, idx_swap):
+def analise_1_2(str_algol1, dados, idx_swap):
     """
     This function find the numbers swapped.
-    :param analise1:
-    :param somas1
+    :param str_algol1:
     :param dados:
     :param idx_swap:
     :return:
     """
-    cont, k, r, s, t, u, m, n, soma, aux, numbers1, aux_idx, idx1, str_num1, str_algol1, n2, dados1 = 0, \
-        0, 0, 0, 0, 0, 0, 0, 0, [], [], [], [], "", [], 0, []
-    for i in range(0, len(analise1)):
-        analise1[i].reverse()
-        for k in range(0, len(analise1[i])):
-            r, s, t, u = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
-            t, u = u, t
-            m = s * 2
-            if m >= 10:
-                m -= 9
-            n = u * 2
-            if n >= 10:
-                n -= 9
-            soma = r + m + t + n
-            somas = soma + sum(somas1[i]) - somas1[i][k]
-            if somas % 10 == 0:
-                aux.append(r)
-                aux.append(s)
-                aux.append(t)
-                aux.append(u)
-                numbers1.append(aux)
-                aux_idx.append(i)
-                aux_idx.append(k)
-                idx1.append(aux_idx)
-                aux = []
-                aux_idx = []
-                break
-            r, s, t, u = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
-            s, t = t, s
-            m = s * 2
-            if m >= 10:
-                m -= 9
-            n = u * 2
-            if n >= 10:
-                n -= 9
-            soma = r + m + t + n
-            somas = soma + sum(somas1[i]) - somas1[i][k]
-            if somas % 10 == 0:
-                aux.append(r)
-                aux.append(s)
-                aux.append(t)
-                aux.append(u)
-                numbers1.append(aux)
-                aux_idx.append(i)
-                aux_idx.append(k)
-                idx1.append(aux_idx)
-                aux = []
-                aux_idx = []
-                break
-            r, s, t, u = analise1[i][k][0], analise1[i][k][1], analise1[i][k][2], analise1[i][k][3]
-            r, s = s, r
-            m = s * 2
-            if m >= 10:
-                m = m - 9
-            n = u * 2
-            if n >= 10:
-                n -= 9
-            soma = r + m + t + n
-            somas = soma + sum(somas1[i]) - somas1[i][k]
-            if somas % 10 == 0:
-                aux.append(r)
-                aux.append(s)
-                aux.append(t)
-                aux.append(u)
-                numbers1.append(aux)
-                aux_idx.append(i)
-                aux_idx.append(k)
-                idx1.append(aux_idx)
-                aux = []
-                aux_idx = []
-                break
-    for i in range(0, len(analise1)):
-        for k in range(0, len(analise1[i])):
-            analise1[i][k].reverse()
-            if k == idx1[i][1]:
-                numbers1[i].reverse()
-                while n2 <= 3:
-                    str_num1 += str(numbers1[i][n2])
-                    n2 += 1
-            else:
-                for j in range(0, len(analise1[i][k])):
-                    str_num1 += str(analise1[i][k][j])
-        str_algol1.append(str_num1)
-        str_num1 = ""
-        n2 = 0
-    print(str_algol1)
-    print(idx_swap)
+    dados1 = []
     for i in range(0, len(dados)):
         for k in range(0, len(dados[i])):
             dados1.append(*dados[i])
@@ -273,7 +180,6 @@ def analise_1_3(analise1, somas1, dados, idx_swap):
         for k in range(0, len(dados1)):
             if k == idx_swap[i]:
                 dados1[k] = str_algol1[i]
-    print(dados1)
     return dados1
 
 
@@ -347,13 +253,10 @@ def analise_2(dados1, idx_missed, algol2):
             aux_str += str(algol2[i][k])
         str_algol.append(aux_str)
         aux_str = ""
-    print(dados1)
     for i in range(0, len(idx_missed)):
         for k in range(0, len(dados1)):
             if k == idx_missed[i]:
                 dados1[k] = str_algol[i]
-    print(dados1)
-    print(idx_missed)
     return dados1
 
 
@@ -362,32 +265,11 @@ def fixed_numbers(dados1):
     Output fixed numbers cards.
     :return:
     """
-    print(len(dados1))
     for i in range(0, len(dados1)):
         print(dados1[i], end=" ")
 
 
-fixed_numbers(analise_2(analise_1_3(analise_1_1(processing_3(processing_1(luhn_algorithm()))),
-                                    analise_1_2(analise_1_1(processing_3(processing_1(luhn_algorithm())))),
+fixed_numbers(analise_2(analise_1_2(analise_1_1(processing_3(processing_1(luhn_algorithm()))),
                                     luhn_algorithm(), processing_2_1(luhn_algorithm())),
                         processing_2_2(luhn_algorithm()), processing_4(processing_1(luhn_algorithm()))))
 
-# The answer:
-# 4004281542393685 5225124120787557 8966112065777557 6507100126979650 4915857466600169 3416526581659550
-# 6849534092402080 7937384693079429 9623372575943783 2528207109206870 7362811688191631 6848840455739666
-# 9363285122146565 3886137515479221 1116607391275329 9496496174532707 7662796626816588 5340882900244483
-# 7879159276942387 2722912535424096 4220280321796793 2601447249629108 8300458452986300 3978159340530951
-# 3191572372177569 9243721260333876 6958252523183727 8406251216638884 3863344702818610 2998298421617986
-# 4904818038655100 7072874537963700 3929060205547272 9489786040986098 5256852105440188 3024807702129994
-# 4307966740003763 9535856210204152 5657427840224745 8312765829233646 4548407314855436 8299072763081520
-# 1961413508325461 2626888411128380 6493889882747733 5152977233508096
-
-# My answer:
-# 4004281542393685 5225124120787557 8966112065777557 6507100126979650 4915857466600169 3416526581659550
-# 6849534092402080 7937384693079429 9623372575934873 2528207109206870 7362811688191631 6848840455739666
-# 9362385122145665 3886137515479221 1116607391257392 9496496174532707 7662796626816588 5340882900244483
-# 7879159276942387 2722912535424096 4220280321796793 2601447249629108 8300458452986300 3978159340530951
-# 3191572372177569 9243721260333876 6958252523183727 8406251216638884 3863344702818610 2998298421617986
-# 4904818038655100 7072874537963700 3929060205547272 9489786040986098 5256852105440188 3024807702129994
-# 4307966740003763 9535856210204152 5657427840224745 8312765829233646 4548407134854536 8299072763081520
-# 1961413508325461 2626888114128380 6493889882747733 5152977233508096
