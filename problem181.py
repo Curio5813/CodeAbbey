@@ -1,5 +1,5 @@
 from csv import reader
-from math import prod, sqrt
+from math import sqrt
 
 
 def reverse_polish_notation():
@@ -79,37 +79,41 @@ def reverse_polish_notation():
             l1[i] = int(l1[i])
     i = 0
     while i in range(0, len(l1)):
+        print(stack)
         if l1[i] == "add":
-            soma = sum(stack)
-            stack = [soma]
+            soma = stack[-2] + stack[-1]
+            stack.pop(-1)
+            stack.pop(-1)
+            stack.append(soma)
         if l1[i] == "sub":
-            n = i
-            sub = stack[0]
-            print(sub)
-            print(stack)
-            while type(l1[i]) is not str:
-                sub = stack[n] - l1[n]
-                n -= 1
-            stack = [sub]
-            print(sub)
-            print(stack)
+            sub = stack[-2] - stack[-1]
+            stack.pop(-1)
+            stack.pop(-1)
+            stack.append(sub)
         if l1[i] == "mul":
-            mult = prod(stack)
-            stack = [mult]
+            mult = stack[-2] * stack[-1]
+            stack.pop(-1)
+            stack.pop(-1)
+            stack.append(mult)
         if l1[i] == "div":
-            divid = stack[0] / l1[i - 1]
-            stack = [divid]
+            divid = stack[-2] / stack[-1]
+            stack.pop(-1)
+            stack.pop(-1)
+            stack.append(divid)
         if l1[i] == "mod":
-            modulo = stack[0] % l1[i - 1]
-            stack = [modulo]
+            modulo = stack[-2] % stack[-1]
+            stack.pop(-1)
+            stack.pop(-1)
+            stack.append(modulo)
         if l1[i] == "sqrt":
-            raiz = sqrt(stack[0])
-            stack = [raiz]
+            raiz = sqrt(stack[-1])
+            stack.pop(-1)
+            stack.append(raiz)
         if l1[i] != "add" and l1[i] != "sub" and l1[i] != "mul" and l1[i] != "div" \
                 and l1[i] != "sqrt" and l1[i] != "mod":
             stack.append(l1[i])
         i += 1
-    print(stack)
+    print(int(stack[0]))
 
 
 reverse_polish_notation()
