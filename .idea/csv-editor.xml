@@ -122,6 +122,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="/problem074.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="/problem081.csv">
           <value>
             <Attribute>
