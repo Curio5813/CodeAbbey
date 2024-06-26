@@ -27,21 +27,35 @@ def number_of_steps_in_euclidean_algorithm():
     l1 = reader(arq, delimiter=" ")
     l1 = list(*l1)
     [int(l1[i]) for i in range(0, len(l1))]
-    resto, step, steps = 0, 0, []
-    for i in range(2, 10_000):
-        for k in range(2, 10_000):
-            x = k
-            y = i
-            step = 0
-            resto = x % y
-            step += 1
-            while resto > 0:
-                x = y
-                y = resto
-                resto = x % y
-                step += 1
-            steps.append(step)
-    print(max(steps))
+    t = int(input())
+    n_step = list(map(int, input().split(" ")))
+    steps, n, resposta, respostas = 0, 0, [], []
+    x, y = 1, 1
+    while x <= 200:
+        while y <= 200:
+            if x < y:
+                break
+            else:
+                a, b = x, y
+                while b != 0:
+                    a, b = b, a % b
+                    steps += 1
+                    if steps == n_step[n]:
+                        print(x, y)
+                        resposta.append(x)
+                        resposta.append(y)
+                        respostas.append(resposta)
+                        resposta = []
+                        print(x, y, steps, n_step)
+                        x, y, steps = 1, 1, 0
+                        n += 1
+                    if steps > n_step[n] or steps < n_step[n]:
+                        steps = 0
+                        x += 1
+                        if x == 200:
+                            x = 1
+                            y += 1
+                        break
 
 
 number_of_steps_in_euclidean_algorithm()
