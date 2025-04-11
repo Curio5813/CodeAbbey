@@ -1,6 +1,3 @@
-from traceback import print_tb
-
-
 def find_3_numbers():
     """
     You are given a positive integer N and must find 3 positive integers X, Y and Z
