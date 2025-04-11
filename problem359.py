@@ -32,7 +32,8 @@ def find_3_numbers():
         for j in range(2, n):
             for k in range(2, n):
                 for p in range(2, n):
-                    if j != k and k != p and j != p and n % (j * k) == 0 and n % (j * p) == 0 and n % (k * p) == 0 and (j * k * p) % n == 0:
+                    if (j != k and k != p and j != p and n % (j * k) == 0
+                            and n % (j * p) == 0 and n % (k * p) == 0 and (j * k * p) % n == 0):
                         temp.append(j)
                         temp.append(k)
                         temp.append(p)
