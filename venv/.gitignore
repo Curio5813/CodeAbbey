@@ -1,8 +1,6 @@
 beecrowd.iml
 misc.xml
-workspace.xml
-
-.idea/
-.venv/
+.idea/workspace.xml
+venv/
 
 

@@ -2,7 +2,7 @@ from csv import reader
 from math import cos, sin, radians
 
 
-def azimute_na_ilha_do_tesour():
+def azimute_na_ilha_do_tesouro():
     """
     Um grupo de piratas teve a sorte de colocar as mãos no mapa da Ilha do Tesouro.
 
