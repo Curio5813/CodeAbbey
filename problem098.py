@@ -81,4 +81,4 @@ def azimute_na_ilha_do_tesouro():
     print(int(round(x, 0)), int(round(y, 0)))
 
 
-azimute_na_ilha_do_tesour()
+azimute_na_ilha_do_tesouro()
