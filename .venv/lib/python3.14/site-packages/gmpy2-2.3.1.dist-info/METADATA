@@ -1,0 +1,54 @@
+Metadata-Version: 2.4
+Name: gmpy2
+Version: 2.3.1
+Summary: gmpy2 interface to GMP, MPFR, and MPC for Python
+Author: Alex Martelli, Case Van Horsen
+Maintainer-email: Matthias Köppe <mkoeppe@math.ucdavis.edu>, Sergey B Kirpichev <skirpichev@gmail.com>
+License-Expression: LGPL-3.0-or-later
+Project-URL: Homepage, https://github.com/gmpy2/gmpy2
+Keywords: gmp,mpfr,mpc,multiple-precision,arbitrary-precision,precision,bignum
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Science/Research
+Classifier: Natural Language :: English
+Classifier: Operating System :: MacOS :: MacOS X
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX
+Classifier: Programming Language :: C
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Programming Language :: Python :: 3.14
+Classifier: Programming Language :: Python :: 3.15
+Classifier: Programming Language :: Python :: Free Threading :: 2 - Beta
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: Topic :: Scientific/Engineering :: Mathematics
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Requires-Python: >=3.9
+Description-Content-Type: text/x-rst
+License-File: COPYING
+License-File: COPYING.LESSER
+Provides-Extra: docs
+Requires-Dist: sphinx>=4; extra == "docs"
+Requires-Dist: sphinx-rtd-theme>=1; extra == "docs"
+Provides-Extra: tests
+Requires-Dist: pytest; extra == "tests"
+Requires-Dist: hypothesis; extra == "tests"
+Requires-Dist: cython; extra == "tests"
+Requires-Dist: mpmath; extra == "tests"
+Requires-Dist: setuptools; extra == "tests"
+Requires-Dist: numpy; (python_version >= "3.11" and python_version < "3.15") and extra == "tests"
+Dynamic: license-file
+
+gmpy2 is an optimized, C-coded Python extension module that supports fast
+multiple-precision arithmetic.  gmpy2 is based on the original gmpy module.
+gmpy2 adds support for correctly rounded multiple-precision real arithmetic
+(using the MPFR library) and complex arithmetic (using the MPC library).
+
+Releases are available in the Python Package Index (PyPI) at
+https://pypi.python.org/pypi/gmpy2/.  Documentation is available at
+https://gmpy2.readthedocs.io/.
