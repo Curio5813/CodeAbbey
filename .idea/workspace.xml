@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4530121d-d8c3-43ac-9b1d-f8762f939082" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/problem056.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/problem056.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/problem056.py" beforeDir="false" afterPath="$PROJECT_DIR$/problem056.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -251,7 +250,8 @@
       <workItem from="1784034133135" duration="620000" />
       <workItem from="1784040220158" duration="8902000" />
       <workItem from="1784116297972" duration="10078000" />
-      <workItem from="1784201767851" duration="10742000" />
+      <workItem from="1784201767851" duration="13327000" />
+      <workItem from="1784263297846" duration="11357000" />
     </task>
     <servers />
   </component>
@@ -263,7 +263,7 @@
     <SUITE FILE_PATH="coverage/CodeAbbey$problem098.coverage" NAME="problem098 Coverage Results" MODIFIED="1783019835287" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CodeAbbey$problem019.coverage" NAME="problem019 Coverage Results" MODIFIED="1755103663816" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CodeAbbey$problem149.coverage" NAME="problem149 Coverage Results" MODIFIED="1783950839512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CodeAbbey$problem056.coverage" NAME="problem056 Coverage Results" MODIFIED="1784213436382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CodeAbbey$problem056.coverage" NAME="problem056 Coverage Results" MODIFIED="1784274660368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CodeAbbey$problem359.coverage" NAME="problem359 Coverage Results" MODIFIED="1755103639847" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

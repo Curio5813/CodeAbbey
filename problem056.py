@@ -64,44 +64,48 @@ def life_is_simple():
     """
     arq = open('problem056.csv')
     l1 = list(arq)
+    flag = False
     for n in range(5):
-        cont, vivas, vivas_vert, vivas_lat, mortas, mortas_1, mortas_2, mortas_1_1, mortas_2_1, mortas_3, mortas_4, teste, testes = 0, [], [], [], [], [], [], [], [], [], [], [], []
-        # print('Ok!')
+        cont, vivas, vivas_vert, vivas_lat, mortas, mortas_1, mortas_2, mortas_1_1, mortas_2_1, mortas_3, mortas_4, mortas_5 = 0, [], [], [], [], [], [], [], [], [], [], []
         for i in range(len(l1)):
-            for j in range(len(l1[i])):
-                if l1[i][j] == 'X':
-                    teste.append(i)
-                    teste.append(j)
-                    testes.append(teste)
-                    teste = []
-        # print(testes)
-        for i in range(len(l1)):
-            for j in range(i, len(l1[i])):
+            for j in range(0, len(l1[i])):
                 if 0 < i < len(l1) - 1 and 0 < j < len(l1[0]) - 1:
-                    if l1[i][j] == 'X' and l1[i][j - 1] == 'X' and l1[i][j + 1] == 'X' and l1[i - 1][j] == '-' and l1[i + 1][j] == '-':
-                        vivas_vert.append(i - 1)
+                    if l1[i][j] == '-' and l1[i - 1][j - 1] == 'X' and l1[i + 1][j - 1] == 'X' and l1[i][j - 1] == 'X':
+                        vivas_vert.append(i)
                         vivas_vert.append(j)
                         vivas.append(vivas_vert)
                         vivas_vert = []
-                        vivas_vert.append(i + 1)
-                        vivas_vert.append(j)
-                        vivas.append(vivas_vert)
-                        vivas_vert = []
-                        # print('Ok01')
+                        # print('Ok0101V')
                         break
         for i in range(len(l1)):
-            for j in range(i, len(l1[i])):
+            for j in range(0, len(l1[i])):
                 if 0 < i < len(l1) - 1 and 0 < j < len(l1[0]) - 1:
-                    if l1[i][j] == 'X' and l1[i - 1][j] == 'X' and l1[i + 1][j] == 'X' and l1[i][j - 1] == '-' and l1[i][j + 1] == '-':
+                    if l1[i][j] == '-' and l1[i - 1][j + 1] == 'X' and l1[i + 1][j + 1] == 'X' and l1[i][j + 1] == 'X':
+                        vivas_vert.append(i)
+                        vivas_vert.append(j)
+                        vivas.append(vivas_vert)
+                        vivas_vert = []
+                        # print('Ok0102V')
+                        break
+        for i in range(len(l1)):
+            for j in range(0, len(l1[i])):
+                if 0 < i < len(l1) - 1 and 0 < j < len(l1[0]) - 1:
+                    if l1[i][j] == '-' and l1[i - 1][j - 1] == 'X' and l1[i - 1][j + 1] == 'X' and l1[i - 1][j] == 'X':
                         vivas_lat.append(i)
-                        vivas_lat.append(j - 1)
+                        vivas_lat.append(j)
                         vivas.append(vivas_lat)
                         vivas_lat = []
+                        # print('Ok0103V')
+                        break
+        for i in range(len(l1)):
+            for j in range(0, len(l1[i])):
+                if 0 < i < len(l1) - 1 and 0 < j < len(l1[0]) - 1:
+                    if l1[i][j] == '-' and l1[i + 1][j - 1] == 'X' and l1[i + 1][j + 1] == 'X' and l1[i + 1][j] == 'X':
                         vivas_lat.append(i)
-                        vivas_lat.append(j + 1)
+                        vivas_lat.append(j)
                         vivas.append(vivas_lat)
                         vivas_lat = []
-                        # print('Ok02')
+                        # print('Ok0104V')
                         break
         for i in range(len(l1)):
             for j in range(i, len(l1[i])):
@@ -111,7 +115,7 @@ def life_is_simple():
                         mortas_1.append(j)
                         mortas.append(mortas_1)
                         mortas_1 = []
-                        # print('Ok10')
+                        # print('Ok0101M')
                         break
         for i in range(len(l1)):
             for j in range(i, len(l1[i])):
@@ -121,7 +125,7 @@ def life_is_simple():
                         mortas_2.append(j)
                         mortas.append(mortas_2)
                         mortas_2 = []
-                        # print('Ok12')
+                        # print('Ok0102M')
                         break
         for i in range(len(l1)):
             for j in range(i, len(l1[i])):
@@ -131,7 +135,7 @@ def life_is_simple():
                         mortas_1_1.append(j)
                         mortas.append(mortas_1_1)
                         mortas_1_1 = []
-                        # print('Ok10')
+                        # print('Ok103M')
                         break
         for i in range(len(l1)):
             for j in range(i, len(l1[i])):
@@ -141,7 +145,7 @@ def life_is_simple():
                         mortas_2_1.append(j)
                         mortas.append(mortas_2_1)
                         mortas_2_1 = []
-                        # print('Ok12')
+                        # print('Ok104M')
                         break
         for i in range(len(l1)):
             for j in range(i, len(l1[i])):
@@ -151,42 +155,96 @@ def life_is_simple():
                         mortas_3.append(j)
                         mortas.append(mortas_3)
                         mortas_3 = []
-                        # print('Ok2')
+                        # print('Ok105M')
                         break
         for i in range(len(l1)):
             for j in range(i, len(l1[i])):
                 if 0 < i < len(l1) - 2 and 0 < j < len(l1[0]) - 2:
                     if l1[i][j] == 'X' and l1[i - 1][j] == 'X' and l1[i - 2][j] == 'X' and l1[i + 1][j] and l1[i + 2][j] == 'X':
-                        # print('Ok2')
                         mortas_4.append(i)
                         mortas_4.append(j)
                         mortas.append(mortas_4)
                         mortas_4 = []
+                        # print('Ok106M')
                         break
-        print('\n')
+        for i in range(len(l1)):
+            for j in range(i, len(l1[i])):
+                if 0 < i < len(l1) - 2 and 0 < j < len(l1[0]) - 2:
+                    if l1[i][j] == 'X' and l1[i - 1][j] == 'X' and l1[i + 1][j] == 'X' and l1[i][j - 1] == 'X' and l1[i][j + 1] == 'X':
+                        mortas_4.append(i)
+                        mortas_4.append(j)
+                        mortas.append(mortas_4)
+                        mortas_4 = []
+                        # print('Ok107M')
+                        break
+        for i in range(len(l1)):
+            for j in range(i, len(l1[i])):
+                if 0 < i < len(l1) - 1 and 0 < j < len(l1[0]) - 1:
+                    if (l1[i][j] == 'X' and l1[i - 1][j] == '-' and l1[i + 1][j] == '-'
+                            and l1[i][j - 1] == '-' and l1[i][j + 1] == '-'
+                            and l1[i - 1][j - 1] == '-' and l1[i - 1][j + 1] == '-'
+                            and l1[i + 1][j - 1] == '-'):
+                        mortas_5.append(i)
+                        mortas_5.append(j)
+                        mortas.append(mortas_5)
+                        mortas_5 = []
+                        # print('Ok108M')
+                    if (l1[i][j] == 'X' and l1[i - 1][j] == '-' and l1[i + 1][j] == '-'
+                            and l1[i][j - 1] == '-' and l1[i][j + 1] == '-'
+                            and l1[i - 1][j - 1] == '-' and l1[i - 1][j + 1] == '-'
+                            and l1[i + 1][j + 1] == '-'):
+                        mortas_5.append(i)
+                        mortas_5.append(j)
+                        mortas.append(mortas_5)
+                        mortas_5 = []
+                        # print('Ok108M')
+                    if (l1[i][j] == 'X' and l1[i - 1][j] == '-' and l1[i + 1][j] == '-'
+                            and l1[i][j - 1] == '-' and l1[i][j + 1] == '-'
+                            and l1[i + 1][j - 1] == '-' and l1[i + 1][j + 1] == '-'
+                            and l1[i - 1][j - 1] == '-'):
+                        mortas_5.append(i)
+                        mortas_5.append(j)
+                        mortas.append(mortas_5)
+                        mortas_5 = []
+                        # print('Ok108M')
+                    if (l1[i][j] == 'X' and l1[i - 1][j] == '-' and l1[i + 1][j] == '-'
+                            and l1[i][j - 1] == '-' and l1[i][j + 1] == '-'
+                            and l1[i + 1][j - 1] == '-' and l1[i + 1][j + 1] == '-'
+                            and l1[i - 1][j + 1] == '-'):
+                        mortas_5.append(i)
+                        mortas_5.append(j)
+                        mortas.append(mortas_5)
+                        mortas_5 = []
+                        # print('Ok108M')
+        # print('')
         # print(mortas, 'Opa!')
         for coord in mortas:
             linha = coord[0]
             coluna = coord[1]
             l1[linha] = l1[linha][:coluna] + '-' + l1[linha][coluna + 1:]
-        print('\n')
+        # print('')
         # print(vivas, 'Epa!')
         for coord in vivas:
             linha = coord[0]
             coluna = coord[1]
             l1[linha] = l1[linha][:coluna] + 'X' + l1[linha][coluna + 1:]
-        for i in range(len(vivas)):
-            for j in range(len(vivas[i])):
-                if i in vivas[i] and j in vivas[i]:
-                    l1[i] = l1[i][:j] + 'X' + l1[i][j + 1:]
+        """
         for i in range(len(l1)):
             for j in range(len(l1[i])):
                 print(l1[i][j], end='')
+        """
         for i in range(len(l1)):
             for j in range(len(l1[i])):
                 if l1[i][j] == 'X':
                     cont += 1
-        print(cont)
-
+        if flag:
+            print(0)
+        if cont == 2 and not flag:
+            flag = True
+            cont = 2
+            print(cont)
+        elif cont > 2:
+            print(cont)
 
 life_is_simple()
+
