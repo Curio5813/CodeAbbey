@@ -84,9 +84,9 @@ def life_is_simple():
                             coluna = j + l
 
                             if 0 <= linha < len(l1) and 0 <= coluna < len(l1[0]):
-                                # Se o vizinho estiver vivo guarda a coordenada
                                 if l1[linha][coluna] == 'X':
                                     cont2 += 1
+                    # Se o vizinho estiver vivo guarda a coordenada
                     if cont2 == 3:
                         vivas_temp.append(i)
                         vivas_temp.append(j)
@@ -106,17 +106,19 @@ def life_is_simple():
                             coluna = j + l
 
                             if 0 <= linha < len(l1) and 0 < coluna < len(l1[0]):
-                                # Se o vizinho estiver vivo guarda a coordenada
                                 if l1[linha][coluna] == 'X':
                                     cont3 += 1
+                    # Se o vizinho estiver morto guarda a coordenada
                     if cont3 < 2 or cont3 > 3:
                         mortas_temp.append(i)
                         mortas_temp.append(j)
                         mortas.append(mortas_temp)
+        # Remover as celulas vivas que morreram
         for coord in mortas:
             linha = coord[0]
             coluna = coord[1]
             l1[linha] = l1[linha][:coluna] + '-' + l1[linha][coluna + 1:]
+        # Pôr as celulas recém nascidas
         for coord in vivas:
             linha = coord[0]
             coluna = coord[1]
@@ -135,3 +137,7 @@ def life_is_simple():
 
 
 life_is_simple()
+
+"""
+16 13 15 15 19
+"""
