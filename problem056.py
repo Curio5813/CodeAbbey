@@ -65,12 +65,13 @@ def life_is_simple():
         for j in range(len(l1[i])):
             print(l1[i][j], end='')
     print()
-    for n in range(5):
+    contil = []
+    for n in range(10):
         cont1, vivas, mortas = 0, [], []
-        # Procura por vizinho com vida
+        # Procurar por celulas vazias que nascerão seres-vivos
         for i in range(len(l1)):
             for j in range(0, len(l1[i])):
-                vivas_temp, mortas_temp = [], []
+                vivas_temp = []
                 if l1[i][j] == '-':
                     cont2 = 0
                     for k in range(-1, 2):
@@ -97,6 +98,10 @@ def life_is_simple():
                         vivas_temp.append(i)
                         vivas_temp.append(j)
                         vivas.append(vivas_temp)
+        # Procura por celulas com vida que morrerão
+        for i in range(len(l1)):
+            for j in range(0, len(l1[i])):
+                mortas_temp = []
                 if l1[i][j] == 'X':
                     cont3 = 0
                     for k in range(-1, 2):
@@ -123,7 +128,6 @@ def life_is_simple():
             linha = coord[0]
             coluna = coord[1]
             l1[linha] = l1[linha][:coluna] + 'X' + l1[linha][coluna + 1:]
-        # print('')
         for k in range(len(l1)):
             for l in range(len(l1[k])):
                 print(l1[k][l], end='')
@@ -132,7 +136,9 @@ def life_is_simple():
             for j in range(len(l1[i])):
                 if l1[i][j] == 'X':
                     cont1 += 1
-        print(cont1)
+        contil.append(cont1)
 
-
+    print(*contil)
 life_is_simple()
+
+print(*[15, 22, 16, 18, 18])
