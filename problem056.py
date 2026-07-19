@@ -60,13 +60,14 @@ def life_is_simple():
     :return:
     """
     arq = open('problem056.csv')
-    l1 = list(arq)
+    l1 = [linha.strip() for linha in arq]
     for i in range(len(l1)):
         for j in range(len(l1[i])):
             print(l1[i][j], end='')
+        print()
     print()
     contil = []
-    for n in range(10):
+    for n in range(5):
         cont1, vivas, mortas = 0, [], []
         # Procurar por celulas vazias que nascerão seres-vivos
         for i in range(len(l1)):
@@ -82,18 +83,10 @@ def life_is_simple():
                             linha = i + k
                             coluna = j + l
 
-                            if linha < 0:
-                                linha = len(l1) - 1
-                            elif linha >= len(l1):
-                                linha = 0
-
-                            if coluna < 0:
-                                coluna = len(l1[0]) - 1
-                            elif coluna >= len(l1[0]):
-                                coluna = 0
+                            if 0 <= linha < len(l1) and 0 <= coluna < len(l1[0]):
                                 # Se o vizinho estiver vivo guarda a coordenada
-                            if l1[linha][coluna] == 'X':
-                                cont2 += 1
+                                if l1[linha][coluna] == 'X':
+                                    cont2 += 1
                     if cont2 == 3:
                         vivas_temp.append(i)
                         vivas_temp.append(j)
@@ -112,7 +105,7 @@ def life_is_simple():
                             linha = i + k
                             coluna = j + l
 
-                            if 0 < linha < len(l1) - 1 and 0 < coluna < len(l1[i]):
+                            if 0 <= linha < len(l1) and 0 < coluna < len(l1[0]):
                                 # Se o vizinho estiver vivo guarda a coordenada
                                 if l1[linha][coluna] == 'X':
                                     cont3 += 1
@@ -131,14 +124,14 @@ def life_is_simple():
         for k in range(len(l1)):
             for l in range(len(l1[k])):
                 print(l1[k][l], end='')
+            print()
         print()
         for i in range(len(l1)):
             for j in range(len(l1[i])):
                 if l1[i][j] == 'X':
                     cont1 += 1
         contil.append(cont1)
-
     print(*contil)
-life_is_simple()
 
-print(*[15, 22, 16, 18, 18])
+
+life_is_simple()
