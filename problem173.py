@@ -2,7 +2,7 @@ from csv import reader
 from collections import deque
 
 
-def chords_of_Music():
+def chords_of_music():
     """
     [https://codeabbey.github.io/data/chords_of_music.jpg]!Imagem
 
@@ -165,4 +165,4 @@ def chords_of_Music():
             print("other")
 
 
-chords_of_Music()
+chords_of_music()
