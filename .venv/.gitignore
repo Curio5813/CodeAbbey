@@ -1,0 +1,9 @@
+# Ambiente virtual
+venv/
+.venv/
+
+# Configurações do IDE (PyCharm / IntelliJ)
+.idea/
+.idea/workspace.xml
+*.iml
+*.xml
