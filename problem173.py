@@ -133,7 +133,7 @@ def chords_of_Music():
     # Achando Tom e Modo (Maior ou Menor) ou Atonalidade
     for i in range(len(acorde_cifra)):
         flag = False
-        # Usando deque da biblioteca Collections para rotacionar tríades de acordes
+        # Usando deque da biblioteca collections para rotacionar tríades de acordes
         fila = deque(acorde_cifra[i])
         tamanho = len(fila)
         for j in range(tamanho):
